@@ -29,5 +29,7 @@ int main()
             printf("Thread creation failed %s\n", strerror(status));
     }
     pthread_exit(NULL);
+    
+    return 0;
 }
 
