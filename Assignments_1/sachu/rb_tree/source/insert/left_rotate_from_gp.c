@@ -1,6 +1,7 @@
 /**
  * @brief Function definition to left rotate from grand parent
  * @param parent node address
+ * @return Returns root of tree
  * */
 bst_t *left_rotate_from_gp(bst_t **parent)
 {
@@ -23,8 +24,8 @@ bst_t *left_rotate_from_gp(bst_t **parent)
     (*parent) -> prev = temp;
 
     ///Changing colors of parent and grand parent
-    (*parent) -> color = ((*parent) -> color) ^ 1;
-    (*parent) -> left -> color = ((*parent) -> left -> color) ^ 1;
+    (*parent) -> color = ((*parent) -> color) ^ MAX;
+    (*parent) -> left -> color = ((*parent) -> left -> color) ^ MAX;
 
     ///Finding root
     return find_root(*parent);

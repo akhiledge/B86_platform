@@ -1,4 +1,4 @@
-/*
+/**
  * @brief Function definition for creating node
  * @param parent address
  * @param value stores the new element
@@ -10,15 +10,15 @@ bst_t *create_node(bst_t *parent, int value)
     assert(new);
 
     ///Assigning addresses and inserting value
-    new->prev = parent;
-    new->data = value;
-    new->color = 0;
-    new->left = NULL;
-    new->right = NULL;
+    new -> prev = parent;
+    new -> data = value;
+    new -> color = RED;
+    new -> left = NULL;
+    new -> right = NULL;
 
     ///Root node
     if(parent == NULL)
-        new->color = 1;
+        new->color = BLACK;
 
     return new;
 }
