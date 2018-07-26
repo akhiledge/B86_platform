@@ -3,9 +3,8 @@
  * @date 13/07/2018
  * @brief Red Black tree operations
  * @Operations are insert delete and display
- * **/
+ * */
 
-#include <stdio.h>
 int main()
 {
     int option;  /*! option is integer to accept user input */
@@ -17,8 +16,9 @@ int main()
     do
     {
         ///Prompt for user input
+        printf("**********************\n");
         printf("Enter your choice\n");
-        printf("1.insert_element\n2.Delete_element\n3.Display\n");
+        printf("1.Insert_Element\n2.Delete_Element\n3.Search_Element\n4.Display_Tree\n5.Exit\n");
 
         fgets(input, SIZE, stdin);
         option = atoi(input);
@@ -27,19 +27,29 @@ int main()
         switch(option)
         {
             case 1:
+                do
+                {
                 printf("Enter the element to be added\n");
                 fgets(input, SIZE, stdin);
-                value = atoi(input);
+                value = my_atoi(input);
+
+                }while(value == INVALID);
+
                 insert_element(&root, value); ///Function call for inserting element
                 break;
 
             case 2:
-                root = delete_element(root);    ///Function call to delete a node
+                delete_element(&root);    ///Function call to delete a node
+                break;
+            case 3:
+                search_tree(root);
                 break;
 
-            case 3:
+            case 4:
                 display_tree(root);          ///Function call to display tree
                 break;
+            case 5:
+                return 0;
                 
             default:
                 printf("Invalid input\n");
@@ -50,6 +60,6 @@ int main()
         loop = getchar();
         __fpurge(stdin);
 
-    }while(loop == 'y');
+    }while((loop == 'y') || (loop == 'Y'));
     return 0;
 }

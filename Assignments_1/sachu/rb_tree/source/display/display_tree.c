@@ -1,7 +1,8 @@
 /**
- * @brief Display function to print elements of tree 
+ * @brief Display function to print elements of tree
+ * @param root stores address of root of tree
  * **/
-///Function definition for displaying tree elements
+
 void display_tree(bst_t *root)
 {
     int value;
@@ -12,6 +13,7 @@ void display_tree(bst_t *root)
         return;
     }
 
+    system("clear");
     ///Prompt for evaluation order
     printf("Choose order of printing\n");
     printf("1.In_order\n2.Pre_order\n3.Post_order\n");
