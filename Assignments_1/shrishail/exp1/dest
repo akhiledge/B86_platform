@@ -1,0 +1,32 @@
+str:=about                file:= 1.txt      count:=1         
+str:=about                file:= 2.txt      count:=1         
+str:=am                   file:= 1.txt      count:=1         
+str:=are                  file:= 1.txt      count:=2         
+total:5         
+str:=bangalore            file:= 1.txt      count:=1         
+total:6         
+str:=family               file:= 1.txt      count:=1         
+total:7         
+str:=good                 file:= 2.txt      count:=1         
+total:8         
+str:=hello                file:= 1.txt      count:=1         
+str:=hi                   file:= 1.txt      count:=2         
+str:=hi                   file:= 2.txt      count:=1         
+str:=how                  file:= 1.txt      count:=1         
+total:13        
+str:=i                    file:= 1.txt      count:=1         
+str:=in                   file:= 1.txt      count:=1         
+total:15        
+str:=locating             file:= 1.txt      count:=1         
+total:16        
+str:=me.how               file:= 1.txt      count:=1         
+str:=meet                 file:= 1.txt      count:=1         
+str:=morning              file:= 2.txt      count:=1         
+total:19        
+str:=please               file:= 1.txt      count:=1         
+total:20        
+str:=what                 file:= 2.txt      count:=1         
+total:21        
+str:=you                  file:= 1.txt      count:=2         
+str:=you                  file:= 2.txt      count:=1         
+total:24        
