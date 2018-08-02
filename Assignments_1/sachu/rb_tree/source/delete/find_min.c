@@ -1,6 +1,6 @@
 /**
  * @brief To find the minimum value in the tree
- * **/
+ * */
 
 void find_min(bst_t *root)
 {
@@ -17,7 +17,8 @@ void find_min(bst_t *root)
 
 bst_t* find_min_element(bst_t *root)
 {
-    if(root->left != NULL)                 ///Recursively moving to left node
-        return find_min_element(root->left);
+    if(root -> left != NULL)                 ///Recursively moving to left node
+        return find_min_element(root -> left);
+
     return root;
 }
