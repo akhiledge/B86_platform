@@ -10,11 +10,13 @@
 
 #define NUM 5									///Macro definition for number of philosophers
 enum state_phil{THINKING, HUNGRY, EATING};		///States the philosophers can be in
+=======
 int state[NUM];									///Variable to hold state of each philosopher
 sem_t sem[NUM];									///semaphore
 pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;	///mutex
 extern int right ;
 extern int left ;
+
 
 ///Function declarations
 void *philosopher_fn(int);
