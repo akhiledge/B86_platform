@@ -1,3 +1,5 @@
+#ifndef _HEADER_H
+#define _HEADER_H
 /**
 *@headerfile stdio.h
 */
@@ -35,3 +37,4 @@ void insert(char *str, char *dest,int argc);
 int get_index(char ch);
 void copy_file(FILE *fp2, int *argc);
 void display(FILE *fp2, int *argc); 
+#endif
