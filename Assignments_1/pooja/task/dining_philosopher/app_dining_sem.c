@@ -6,10 +6,13 @@
 ///inclusion of header file
 #include "header.h"
 
+
+=======
 /// Global variables defined ..
 int philosophers[NUM] = {0, 1, 2, 3, 4};		///Number of philosophers
 int right = 0;
 int left = 0;
+
 
 
 void *philosopher_fn(int phil_num)
