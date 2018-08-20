@@ -1,5 +1,5 @@
 /**
- *@brief: croll keyboard leds using keyboard
+ *@brief: control keyboard leds using keyboard
  **/ 
 #include <stdio.h> 
 #include <stdlib.h> 
