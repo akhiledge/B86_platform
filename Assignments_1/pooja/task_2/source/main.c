@@ -1,9 +1,9 @@
 /**
 * @author Poojashree M
- *@brief: Reading a file and placing the contents in the hash file
+*@brief: Reading a file and placing the contents in the hash file
 *@operation Interface to choose insert to hash table, copy hash table content to file, Search a string, Exit
 *@param source files and destination file as command line arguments
- *@date: 23/07/2018
+*@date: 23/07/2018
  */
 
 NODE *hashtable[ARR_SIZE] = {NULL};
@@ -16,7 +16,8 @@ int main(int argc, char **argv)
 	char *word = NULL;					/*!<character ptr for reading from file*/
 	int choice = 0;						/*!<int variable for choice*/
 	int i = 0;
-	int ret_value = 0;					/*!<int variable for return from search*/	char str_search[SIZE]; 
+	int ret_value = 0;					/*!<int variable for return from search*/	
+	char str_search[SIZE];				/*!<character array*/
 
 	str = (char *) malloc(SIZE);
 	assert(str);						///Malloc validation for str
@@ -24,10 +25,8 @@ int main(int argc, char **argv)
 	word = (char *) malloc(SIZE);
 	assert(word);						///Malloc validation for word
 
-//	str_search = (char *) malloc(SIZE);
-//	assert(str_search);	
 				
-	if(argc < 3){										///validation of command line arguments
+	if(argc < 3){														///validation of command line arguments
 		printf("Format : %s <file name1> <file name2>\n", argv[0]);
 		return 0;
 	}
