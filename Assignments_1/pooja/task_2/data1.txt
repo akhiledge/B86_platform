@@ -1,2 +1,0 @@
-This is a file which is used as a source file for the hash table, from where the contents are placed in  hash table. 
-While reading files If same words are found then the count in the node is increased, if a new word found then a node is added.
