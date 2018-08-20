@@ -1,0 +1,5 @@
+Name            Board number            Remarks
+basava prasad   4426                    Pi 3,SD card 16GB, Transcend Card reader
+vinay kumar     4427                    pi 3,SD card 4GB
+sachu           4428                    pi 3,SD card 32GB, VGA-HDMI converter(5109)
+Shrishail       4429                    pi 3
