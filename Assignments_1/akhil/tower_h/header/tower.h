@@ -17,22 +17,23 @@
 
 // Macros ends.....
 
-// External variables
-
-
-
-// Ends....
-
-
-
 // Prototypes and typedef 
-
-extern void hanoi_tower (int32_t disc, char source, char destiny,\
-        char middleman);
-
-
-
-
+/**
+ * @Synopsis  
+ *
+ * @Param disc
+ * @Param src_tower
+ * @Param dest_tower
+ * @Param mid_tower
+ *
+ * @Returns void
+ */
+extern void 
+hanoi_tower (int32_t disc,
+             char src_tower,
+             char dest_tower,
+             char mid_tower 
+             );
 // ends ....
  
 #endif      /// Header Guard ends .....

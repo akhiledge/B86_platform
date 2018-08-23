@@ -1,0 +1,13 @@
+alloc.o: proc/alloc.c proc/procps.h
+compare.o: proc/compare.c proc/readproc.h proc/compare.h
+devname.o: proc/devname.c proc/version.h proc/devname.h
+ksym.o: proc/ksym.c proc/procps.h proc/version.h proc/sysinfo.h
+output.o: proc/output.c proc/procps.h
+pwcache.o: proc/pwcache.c proc/procps.h
+readproc.o: proc/readproc.c proc/version.h proc/readproc.h proc/devname.h \
+ proc/procps.h
+sig.o: proc/sig.c proc/sig.h
+status.o: proc/status.c proc/procps.h proc/readproc.h proc/status.h
+sysinfo.o: proc/sysinfo.c proc/version.h proc/sysinfo.h
+version.o: proc/version.c proc/version.h
+whattime.o: proc/whattime.c proc/whattime.h proc/sysinfo.h

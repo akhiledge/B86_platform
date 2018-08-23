@@ -9,13 +9,19 @@
 #include "./../header/standard.h"
 #include "./../header/dinners.h"
 
-bool thinking_about_food (int32_t position ){
-    
-    
+/**
+ * @Synopsis  Philosopher's wait state function
+ *
+ * @Param position
+ *
+ * @Returns   bool
+ */
+bool thinking_about_food (int32_t position )
+{
         printf (" Philosopher %d thinking about fooding"\
                "\t Food remaining is %d \n", position + 1, food);
-            
-        usleep ((useconds_t) MIN_TIM );
-
-                return true;
+        usleep ((useconds_t) MIN_TIM );/**@Function usleep will make the 
+                                                    process sleep for micro
+                                                    seconds */
+    return true;
 }
