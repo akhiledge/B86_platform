@@ -1,23 +1,81 @@
-#include<stdio.h>                                                               
-#include<stdlib.h>                                                              
-#include<assert.h>                                                              
-#define MAX 50                                                                  
-#define RED 1                                                                
-#define BLACK 0                                                                   
-typedef struct tree{                                                                    
-	int val;                                                                   
-	char color:1;                                                               
-	struct tree *left;                                                          
-	struct tree *right;                                                         
-	struct tree *parent;                                                        
-}rbtree;                                                                              
+/*
+ * @headerfile stdio.h
+ */
+#include<stdio.h>       
 
-rbtree *insert(rbtree *, int);                                           
-rbtree *create(rbtree *, int);                                           
-void print(rbtree *);                                                        
-void inorder(rbtree *);                                                        
-rbtree *alternode(rbtree *, rbtree *);                                     
-rbtree *right_rotategp(rbtree *, rbtree *);                                 
-rbtree *left_rotategp(rbtree *, rbtree *);                                  
-void right_rotate(rbtree *);                                                   
+/*
+ * @headerfile stdlib.h
+ */
+#include<stdlib.h>    
+
+/*
+ * @headerfile assert.h
+ */
+#include<assert.h>   
+
+/*
+ * @def MAX 50
+ */
+#define MAX 50
+
+/*
+ * @def RED 1
+ */
+#define RED 1       
+
+/*
+ * @def BLACK 0
+ */
+#define BLACK 0      
+
+typedef struct tree{                                                                    
+    int val;                                                                   
+    char color:1;                                                               
+    struct tree *left;                                                          
+    struct tree *right;                                                         
+    struct tree *parent;                                                        
+}rbtree;                                                                              
+/*
+ * function prototype for insert operation
+ * /
+ rbtree *insert(rbtree *, int);       
+
+/*
+ * function prototype for creating a node
+ */
+rbtree *create(rbtree *, int);      
+
+/*
+ * function prototype for printing a node
+ */
+void print(rbtree *);     
+
+/*
+ * inorder traversal
+ */
+void inorder(rbtree *);
+
+/*
+ *function prototype for alternode
+ */
+rbtree *alternode(rbtree *, rbtree *);
+
+/*
+ * Function prototype for right rotating grand parent
+ */
+rbtree *right_rotategp(rbtree *, rbtree *); 
+
+/*
+ * Function prototype for left rotating grandparent
+ */
+rbtree *left_rotategp(rbtree *, rbtree *);   
+
+/*
+ *function prototype for right rotate
+ */
+void right_rotate(rbtree *);
+
+/*
+ * function prototype for left rotate
+ */
 void left_rotate(rbtree *);                                                    
