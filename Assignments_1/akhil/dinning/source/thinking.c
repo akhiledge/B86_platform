@@ -5,7 +5,7 @@
  * Last Modified Date: 19.07.2018
  * Last Modified By  : Akhil Budampati <a.budampati@globaledgesoft.com>
  */
- 
+
 #include "./../header/standard.h"
 #include "./../header/dinners.h"
 
@@ -16,12 +16,12 @@
  *
  * @Returns   bool
  */
-bool thinking_about_food (int32_t position )
+bool thinking_about_food(int32_t position)
 {
-        printf (" Philosopher %d thinking about fooding"\
-               "\t Food remaining is %d \n", position + 1, food);
-        usleep ((useconds_t) MIN_TIM );/**@Function usleep will make the 
-                                                    process sleep for micro
-                                                    seconds */
+	printf(" Philosopher %d thinking about fooding"\
+	       "\t Food remaining is %d\n", position + 1, food);
+	usleep((useconds_t) MIN_TIM);/**@Function usleep will make the
+						    process sleep for micro
+						    seconds */
     return true;
 }
