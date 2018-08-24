@@ -1,7 +1,19 @@
-//#include"header.h"
-struct hashtable *create(char *str)
+
+/*
+ * File:create.c
+ * Author:shrishail satihal
+ * Description:creating a node to insert into hash table
+ * Date:23-8-18
+ * last modified:23-8-18
+ */
+
+struct hashtable *create(char *str)///function definition for creatig\
+                     a node which takes string as a argument and returns\
+                     pointer to a structure
 {
-    struct hashtable *newnode = (struct hashtable *)malloc(sizeof(struct hashtable)); ///allocating memory for newnode 
+    ///allocating a memory for newnode
+    struct hashtable *newnode \
+        = (struct hashtable *)malloc(sizeof(struct hashtable));
     if(newnode == NULL)
     {
         printf("malloc failed\n");

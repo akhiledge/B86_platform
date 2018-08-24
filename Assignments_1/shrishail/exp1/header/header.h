@@ -20,22 +20,27 @@
  *@headerfile stdio.h
  */
 #include<stdio.h>
+
 /**
  *@headerfile stdlib.h
  */
 #include<stdlib.h>
+
 /**
  *@headerfile stdlib.h
  */
 #include<assert.h>
+
 /**
  *@headerfile string.h
  */
 #include<string.h>
+
 /**
  *@def MAX
  */
 #define MAX 150
+
 /**
  *@def SIZE
  */

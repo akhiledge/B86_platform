@@ -1,11 +1,18 @@
-//#include"header.h"
-//function definition for getting index
-int get_index(char ch)                                                          
+/*
+ * File:getindex.c
+ * Author:shrishail satihal
+ * Description:function for getting index of each string
+ * Date:23-8-18
+ * last modified:23-8-18
+ */
+
+int get_index(char ch) ///function definition for getting index of each\
+string which takes an argument character and returns an integer        
 {                                                                               
-    if((ch >= 'a') && (ch <= 'z')){ ///if ch is between a to z return ch-a 
+    if ((ch >= 'a') && (ch <= 'z')) { ///if ch is between a to z return ch-a 
         return (ch - 'a');      
     }              
-    else if((ch >= 'A') && (ch <= 'Z'))                                                                      
+    else if ((ch >= 'A') && (ch <= 'Z'))                                                                      
         return (ch - 'A');    ///else return ch-A
 
     else if ((ch >= '0' ) && (ch  <= '9'))
