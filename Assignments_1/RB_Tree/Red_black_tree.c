@@ -1,5 +1,5 @@
 /**
- * File              : RB_Tree/RB_Tree/Red_black_tree.c
+ * File              : RB_Tree/Red_black_tree.c
  * Author            : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
  * Date              : 17.07.2018
  * Last Modified Date: 24.08.2018
