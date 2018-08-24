@@ -1,9 +1,5 @@
 /**
-<<<<<<< HEAD:Assignments_1/vamshi/Dining_Philosophers/Diners_philosphers.c
- * File              : Diners_philosphers.c
-=======
  * File              : ../Dining_Philosophers/Diners_philosphers.c
->>>>>>> e06a42683982769cf77bb4323a789361df6e12aa:Assignments_1/vamshi/Dining_Philosophers/Dining_Philosophers/Diners_philosphers.c
  * Author            : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
  * Date              : 16.07.2018
  * Last Modified Date: 24.08.2018

@@ -1,13 +1,5 @@
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD:Assignments_1/vamshi/RB_Tree/Red_black_tree.c
- * File              : Red_black_tree.c
-=======
  * File              : RB_Tree/Red_black_tree.c
->>>>>>> e06a42683982769cf77bb4323a789361df6e12aa:Assignments_1/vamshi/RB_Tree/RB_Tree/Red_black_tree.c
-=======
- * File              : RB_Tree/RB_Tree/Red_black_tree.c
->>>>>>> origin/vamshii
  * Author            : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
  * Date              : 17.07.2018
  * Last Modified Date: 24.08.2018
