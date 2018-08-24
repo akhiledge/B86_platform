@@ -1,37 +1,70 @@
 /**
+ * File:header.h
+ * Author:Shrishail satihal
+ * Description:Dining philosopher problem
+ * Date:23-8-18
+ * Last modified:23-8-18
+ */
+ 
+/**
 *@headerfile stdio.h
 */
 #include <stdio.h>
+
 /**
 *@headerfile pthread.h
 */
 #include <pthread.h>
+
 /**
 *@headerfile semaphore.h
 */
 #include <semaphore.h>
+
 /**
 * @def SIZE
 */
 #define SIZE 6
+
 /**
 * @def THINK
 */
 #define THINK 2
+
 /**
 * @def HUNGRY
 */
 #define HUNGRY 1
+
 /**
 * @def EAT
 */
 #define EAT 0
 sem_t sem; /*!@sem sem is variable of type sem_t*/
-sem_t S[SIZE];
+sem_t Semaphore[SIZE];
 int state[SIZE]; /*!@ state is an array of SIZE*/
-//int phil[SIZE] = {0, 1, 2, 3, 4, 5};
+
+/**
+ *function prototype for philosopher test which takes an argument philosopher\
+number of type int and returns void 
+ */
 void philosophertest(int pnum);
+
+/**
+ * function prototype for take chop which takes an argument philosophernumber\
+ * of type int and returns void
+ */
 void takechop(int pnum);
+
+/**
+ * function prototype for put chop which takes an argument philosophernumber\
+ * of type int and returns void
+ */
 void putchop(int pnum);
+
+/**
+ * function prototype for philosopher which takes an argument philosophernumber\
+ * of type void and returns void pointer
+ */
 void* philosopher(void* num);
 
