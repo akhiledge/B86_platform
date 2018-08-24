@@ -1,17 +1,9 @@
 /**
-<<<<<<< HEAD
  * File              : RB_Tree/Red_black_tree.c
  * Author            : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
  * Date              : 17.07.2018
  * Last Modified Date: 24.08.2018
  * Last Modified By  : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
-=======
- * File              : Red_black_tree.c
- * Author            : Yaragani Vamshi Krishna <vk.yaragani@globaledgesoft.com>
- * Date              : 17.07.2018
- * Last Modified Date: 23.08.2018
- * Last Modified By  : Yaragani Vamshi Krishna <vk.yaragani@globaledgesoft.com>
->>>>>>> master
  */
 
 #include <stdio.h>
@@ -97,13 +89,9 @@ Insertion (int data)
     int child[Size];
     int index = 0;
     int value;
-<<<<<<< HEAD
     /** Checking wheather the root is null or not. 
      * If null creating the root node.
      */
-=======
-    ///// Checking wheather the root is null or not. If null creating the root node.
->>>>>>> master
     if (NULL == root) {
         root = CreateNode( data );
         root->color = BLACK;
@@ -128,18 +116,12 @@ Insertion (int data)
     stack[index-1]->child[value] = CreateNode( data );
     //// checking the index value and the Parent color of the node.
     while ((index >= 3) && (stack[index-1]->color == RED)) {
-<<<<<<< HEAD
         if (child[index-2] == L_child) { 
             //// if the parent is left child of it's then do this.
             temp_node = stack[index-2]->child[R_child];
             if ((temp_node != NULL) && (temp_node->color == RED)) { 
                 //// change the color of it's parent and uncle to \
                     black, if they are red.
-=======
-        if (child[index-2] == L_child) { //// if the parent is left child of it's then do this.
-            temp_node = stack[index-2]->child[R_child];
-            if ((temp_node != NULL) && (temp_node->color == RED)) { //// change the color of it's parent and uncle to black, if they are red.
->>>>>>> master
                 stack[index-2]->color = RED;
                 stack[index-1]->color = temp_node->color = BLACK;
                 index = index - 2;
@@ -166,18 +148,12 @@ Insertion (int data)
                     stack[index-3]->child[child[index-3]] = temp_node;
                 break;
             }
-<<<<<<< HEAD
         } else {   
             //// if the parent is right child of it's parent do this.
             temp_node = stack[index-2]->child[L_child];
             if ((temp_node != NULL) && (temp_node->color == RED)){
                 ///change the color of the parent and uncle to black, \
                     if they are red. 
-=======
-        } else {   //// if the parent is right child of it's parent do this.
-            temp_node = stack[index-2]->child[L_child];
-            if ((temp_node != NULL) && (temp_node->color == RED)){///change the color of the parent and uncle to black, if they are red. 
->>>>>>> master
                 stack[index-2]->color = RED;
                 stack[index-1]->color = temp_node->color = BLACK;
                 index = index-2;
@@ -215,7 +191,6 @@ int main()
     int data;
     char *buffer = NULL;
     char choice;
-<<<<<<< HEAD
     buffer = (char *)malloc( sizeof(char) * Buf_Size );
     assert(buffer);
 
@@ -223,14 +198,6 @@ int main()
         printf("\na. Insertion\nb. Inorder\n\
                 c. Preorder\nd. Postorder\ne. Exit\n");
         printf("Enter your choice:");
-=======
-    buffer = (char *)malloc( sizeof(char) * Buf_Size ); //// allocating the memory for buffer.
-    assert(buffer); /// checking wheather the memory is allocated or not.
-
-    while (true) {
-        printf("\na. Insertion\nb. Inorder\nc. Preorder\nd. Postorder\ne. Exit\n");
-        printf("Enter your choice:");  //// take the choice from user.
->>>>>>> master
         __fpurge(stdin);
         choice = getchar();
         switch (choice) {
