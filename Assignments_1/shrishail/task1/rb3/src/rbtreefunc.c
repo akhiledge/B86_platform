@@ -18,25 +18,28 @@ rbtree *alternode(rbtree *root,
     if (newnode->parent != root) {
         parent = newnode->parent;                                                   
         grandparent = newnode->parent->parent;                                      
-        if (parent->color){
+        if (parent->color) {
             if (grandparent->left != parent)          
                 uncle = grandparent->left;                                      
             else                                                                
                 uncle = grandparent->right;                                     
 
-            if (uncle == NULL || (uncle->color == BLACK)){
+            if (uncle == NULL || (uncle->color == BLACK)) {
                 if ((grandparent->left == parent)  && (parent->left == newnode))
                     root=right_rotategp(root,grandparent);
-                else if ((grandparent->left == parent) && (parent->left!=newnode)){
+                else if ((grandparent->left == parent) \
+                        && (parent->left != newnode)) {
                     left_rotate(parent);
-                    root=right_rotategp(root,grandparent);
+                    root = right_rotategp(root, grandparent);
                 }
-                else if ((grandparent->left != parent)  && (parent->left!=newnode)){
-                    root=left_rotategp(root,grandparent);
+                else if ((grandparent->left != parent) \
+                        && (parent->left != newnode)) {
+                    root = left_rotategp(root,grandparent);
                 }
-                else if ((grandparent->left != parent) && (parent->left == newnode)){
+                else if ((grandparent->left != parent) \
+                        && (parent->left == newnode)) {
                     right_rotate(parent);
-                    root=left_rotategp(root,grandparent);
+                    root = left_rotategp(root,grandparent);
                 }
                 return root;
             }
@@ -59,7 +62,8 @@ rbtree *right_rotategp(rbtree *root,
     rbtree *parent = grandparent -> left;                                      
     grandparent->left = parent->right;                                          
     parent->right = grandparent;                                                
-    if ((grandparent->parent != NULL) && (grandparent->parent->left == grandparent))
+    if ((grandparent->parent != NULL) \
+            && (grandparent->parent->left == grandparent))
         grandparent->parent->left = parent;                                     
     else                                                                        
         grandparent->parent->right = parent;                                    
@@ -67,7 +71,7 @@ rbtree *right_rotategp(rbtree *root,
     grandparent->parent = parent;                                               
     grandparent->color = RED;                                                   
     parent->color = BLACK;                                                      
-    if (parent->parent == NULL){
+    if (parent->parent == NULL) {
         root = parent;    
         return root;                                                            
     }                                                                           
@@ -78,7 +82,7 @@ rbtree *left_rotategp(rbtree *root,
            which takes a arguments root and grandparent are pointer to a\
            structure  and returns  pointer to a structure of type rbtree                                    
 {                                                                               
-    rbtree *parent = grandparent -> right;                                     
+    rbtree *parent = grandparent->right;                                     
     grandparent->right = parent->left;                                          
     parent-> left = grandparent;                                                
     if ((grandparent->parent != NULL) \
@@ -90,7 +94,7 @@ rbtree *left_rotategp(rbtree *root,
     grandparent->parent = parent;                                               
     grandparent->color = RED;                                                   
     parent->color = BLACK;                                                      
-    if (parent->parent == NULL){
+    if (parent->parent == NULL) {
         root = parent;                                                          
         return root;                                                            
     }                                                                           
@@ -98,21 +102,23 @@ rbtree *left_rotategp(rbtree *root,
     return root;                                                                
 }                                                                               
 void right_rotate(rbtree *parent)  ///function definition for left rotate which\
-         takes an argument parent which is a poiter to structure and returns void 
+         takes an argument parent which is a poiter to structure and it\
+         returns void 
 {         
-             rbtree *child = parent->left;                                             
-             parent->parent->right = child;                                              
-             child->parent = parent->parent;                                             
-             parent->parent = child;                                                     
-             if (parent->right != NULL)                                                  
-                 parent->right->parent = child;                                          
-             child->left = parent->right;                                                
-             child->right = parent;                                                      
-             parent->left = NULL;                                                        
-             parent->right = NULL;                                                       
-         }
+    rbtree *child = parent->left;                                             
+    parent->parent->right = child;                                              
+    child->parent = parent->parent;                                             
+    parent->parent = child;                                                     
+    if (parent->right != NULL)                                                  
+        parent->right->parent = child;                                          
+    child->left = parent->right;                                                
+    child->right = parent;                                                      
+    parent->left = NULL;                                                        
+    parent->right = NULL;                                                       
+}
 void left_rotate(rbtree *parent) ///function definition for left rotate which\
-         takes an argument parent which is a poiter to structure and returns void    
+         takes an argument parent which is a poiter to structure and  it \
+         returns void    
 {                                                                               
     rbtree *child = parent->right;                                            
     parent->parent->left = child;                                               

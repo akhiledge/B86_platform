@@ -5,7 +5,17 @@
  * Date:23-8-18
  * Last modified:23-8-18
  */
- 
+
+/*
+ * header Guard
+ */
+#ifndef _HEADER_H
+
+/*
+ * Header Guard
+ */
+#define _HEADER_H
+
 /**
 *@headerfile stdio.h
 */
@@ -67,4 +77,4 @@ void putchop(int pnum);
  * of type void and returns void pointer
  */
 void* philosopher(void* num);
-
+#endif ///end of headerguard

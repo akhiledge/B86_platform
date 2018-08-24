@@ -11,11 +11,11 @@ void philosophertest(int pnum) ///Function prototype for Philosophertest which\
 {
     ///check whether philosopher is in hungry state
     ///check whether right and left handside philosopher are eating or not
-    if (state[pnum] == HUNGRY && state[(pnum+SIZE-1)%SIZE] != EAT \
-            && state[(pnum+1)%SIZE] != EAT) {
+    if (state[pnum] == HUNGRY && state[(pnum + SIZE - 1) % SIZE] != EAT \
+            && state[(pnum + 1) % SIZE] != EAT) {
         state[pnum] = EAT;
         printf("philosopher %d took chopsticks %d and %d\n", pnum + 1, \
-                ((pnum+1)%SIZE) + 1, pnum + 1);
+                ((pnum + 1) % SIZE) + 1, pnum + 1);
         printf("philosopher %d is Eating\n", pnum + 1);
         sem_post(&Semaphore[pnum]);
     }
@@ -40,7 +40,7 @@ void putchop(int pnum) ///Function prototype for putchop which takes\
     sem_wait(&sem);
     state[pnum] = THINK;
     printf("philosopher %d keeping chopsticks %d and %d to down\n", pnum + 1,\
-            ((pnum+SIZE-1)%SIZE) + 1, pnum + 1);
+            ((pnum + SIZE - 1) % SIZE) + 1, pnum + 1);
     printf("philosopher %d is thinking\n", pnum + 1);
     philosophertest((pnum+SIZE-1)%SIZE);
     philosophertest((pnum+1)%SIZE);

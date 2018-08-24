@@ -1,3 +1,24 @@
+
+/*
+ * File:header.h
+ * Author:Shrishail Satihal
+ * Description:Rb tree insertion
+ * Date:23-8-18
+ * Last modified:23-8-18
+ */
+
+
+
+/*
+ * header Guard
+ */
+#ifndef _HEADER_H
+
+/*
+ * Header Guard
+ */
+#define _HEADER_H
+
 /*
  * @headerfile stdio.h
  */
@@ -78,4 +99,5 @@ void right_rotate(rbtree *);
 /*
  * function prototype for left rotate
  */
-void left_rotate(rbtree *);                                                    
+void left_rotate(rbtree *);           
+#endif ///end of header guard

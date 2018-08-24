@@ -6,7 +6,7 @@
  * Description:RB tree insertion
  */
 
-int main()                                                                      
+int main(void)                                                                      
 {                                                                               
     char *str = NULL;                                                           
     rbtree *root = NULL;                 
@@ -31,6 +31,9 @@ int main()
             case 3: exit(0);                                                    
             default: printf("Invalid argument! check again\n");                                
         }                                                                       
-    }                                                                           
+    }        
+    free(str);
+    str=NULL;
+    return 0;    
 }                                                                               
 
