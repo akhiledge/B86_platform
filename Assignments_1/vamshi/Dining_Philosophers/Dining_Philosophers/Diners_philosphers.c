@@ -1,17 +1,9 @@
 /**
-<<<<<<< HEAD
  * File              : ../Dining_Philosophers/Diners_philosphers.c
  * Author            : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
  * Date              : 16.07.2018
  * Last Modified Date: 24.08.2018
  * Last Modified By  : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
-=======
- * File              : Diners_philosphers.c
- * Author            : Yaragani Vamshi Krishna <vk.yaragani@globaledgesoft.com>
- * Date              : 16.07.2018
- * Last Modified Date: 23.08.2018
- * Last Modified By  : Yaragani Vamshi Krishna <vk.yaragani@globaledgesoft.com>
->>>>>>> master
  */
 #include <stdio.h>
 #include <stdbool.h>
@@ -29,7 +21,6 @@
  * @Param Philospher[P_MAX] ---> Maximum no.of philosphers that we can take
  *                               P_MAX is macro it can be changed
  * @Param State         ---> It describes Philosopher is in which state
-<<<<<<< HEAD
  * @Param Semaphore[MAX]---> Array of individual semaphores for every 
  *                           philosopher MAX is macro it is the no.of 
  *                           philosophers
@@ -39,20 +30,12 @@ int Philospher[P_MAX] = {0, 1, 2, 3, 4,
                          5, 6, 7, 8, 9,
                          10, 11, 12, 13, 14,
                          15, 16, 17, 18, 19};
-=======
- * @Param Semaphore[MAX]---> Array of individual semaphores for every philosopher
- *                           MAX is macro it is the no.of philosophers
- * @Param Mutex         ---> Common semaphore for all the philosophers 
- */
-int Philospher[P_MAX] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
->>>>>>> master
 int State[MAX];
 sem_t Semaphore[MAX];
 sem_t Mutex;
 
 /**
  * @Synopsis  --->  Check function will checks weather the philosopher is
-<<<<<<< HEAD
  *                  in think state or not. If philosopher is in think 
  *                  state and checks the forks are available or not. 
  *                  change philosopher state to eat state and after some 
@@ -60,14 +43,6 @@ sem_t Mutex;
  *
  * @Param Philospher_num ---> To know weather which philosopher is 
  *                            going to eat state.
-=======
- *                  in think state or not. If philosopher is in think state
- *                  and checks the forks are availabe or not. change philosopher
- *                  state to eat state and after some time put forks down.
- *
- * @Param Philospher_num ---> To know weather which philosopher is going to eat
- *                            state.
->>>>>>> master
  */
 void 
 Check (int Philospher_num)
@@ -88,20 +63,12 @@ Check (int Philospher_num)
 }/** End of check function*/
 
 /**
-<<<<<<< HEAD
  * @Synopsis  --->  lock the common semaphore and change philosopher 
  *                  state to hungry and callng the check function 
  *                  after that releasing common semaphore.
  *
  * @Param Philospher_num  ---> to know the which philosopher is in 
  *                             hungry state.
-=======
- * @Synopsis  --->  lock the common semaphore and change philosopher state to
- *                  hungry and callng the check function after that releasing 
- *                  common semaphore.
- *
- * @Param Philospher_num  ---> to know the which philosopher is in hungry state.
->>>>>>> master
  */
 void 
 Taking_fork (int Philospher_num)
@@ -117,7 +84,6 @@ Taking_fork (int Philospher_num)
 }/** End of Taking_fork function*/
 
 /**
-<<<<<<< HEAD
  * @Synopsis   ---> this function will change the philosopher state 
  *                  to thinking and put down the forks after that it 
  *                  is calling the check function to check availability 
@@ -125,14 +91,6 @@ Taking_fork (int Philospher_num)
  *
  * @Param Philospher_num  --->  to know which philosopher is putting 
  *                              down the forks.
-=======
- * @Synopsis   ---> this function will change the philosopher state to thinking
- *                  and put down the forks after that it is calling the check 
- *                  function to check availability of forks.
- *
- * @Param Philospher_num  --->  to know which philosopher is putting down the
- *                              forks.
->>>>>>> master
  */
 void 
 Puting_fork (int Philospher_num)
@@ -151,7 +109,6 @@ Puting_fork (int Philospher_num)
 }/** End of Putting_fork fuinction */
 
 /**
-<<<<<<< HEAD
  * @Synopsis  --->  This function is creating philosophers and putting 
  *                  state as thinking state.
  *
@@ -159,14 +116,6 @@ Puting_fork (int Philospher_num)
  *
  * @Returns   ---> this function is returning NULL to the calling 
  *                 function.
-=======
- * @Synopsis  --->  This function is creating philosophers and putting state as
- *                  thinking state.
- *
- * @Param num ---> num is the identification number of the philosopher.
- *
- * @Returns   ---> this function is returning NULL to the calling function.
->>>>>>> master
  */
 static void 
 *Philosphers (void *num)
@@ -181,14 +130,9 @@ static void
 }/** End of Philosphers function */
 
 /**
-<<<<<<< HEAD
  * @Synopsis  --->  Main function for the Dining philosophers. It is 
  *                  creating philosophers and semaphores for each 
  *                  philosopher.
-=======
- * @Synopsis  --->  Main function for the Dining philosophers. It is creating 
- *                  philosophers and semaphores for each philosopher.
->>>>>>> master
  *
  * @Returns   --->  main is returning 0 to startup function.
  */
@@ -201,12 +145,8 @@ int main(void)
         sem_init ( &Semaphore[index], 0, 1 );
     } 
     for (index = MAX - 1; index >= 0; index--){
-<<<<<<< HEAD
         pthread_create ( &Thread[MAX], NULL, &Philosphers, 
                                         &Philospher[index]);
-=======
-        pthread_create ( &Thread[MAX], NULL, &Philosphers, &Philospher[index]);
->>>>>>> master
         printf("Philospher %d is Thinking\n", index+1);
     }
     pthread_exit(NULL);
