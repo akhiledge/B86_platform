@@ -78,9 +78,8 @@ RBT
     return newnode;
 }
 
-/* // Insertion function will insert the node into tree
-    at correct position*/
-/* // with correct color by performing the rotations. */
+/*  Insertion function will insert the node into tree at correct position
+ *  with correct color by performing the rotations. */
 void
 Insertion(int data)
 {
@@ -100,7 +99,7 @@ Insertion(int data)
     }
     stack[index] = root;
     child[index++] = L_child;
-    /* // Find the place to insert the node. */
+    /*  Find the place to insert the node. */
     while (temp_node != NULL) {
 	stack[index] = temp_node;
 	if (temp_node->data == data) {
@@ -113,15 +112,15 @@ Insertion(int data)
     }
     free(temp_node);
     temp_node = NULL;
-    /* // create and insert the node. */
+    /*  create and insert the node. */
     stack[index-1]->child[value] = CreateNode(data);
-    /* // checking the index value and the Parent color of the node. */
+    /*  checking the index value and the Parent color of the node. */
     while ((index >= 3) && (stack[index-1]->color == RED)) {
 	if (child[index-2] == L_child) {
-	    /* // if the parent is left child of it's then do this. */
+	    /*  if the parent is left child of it's then do this. */
 	    temp_node = stack[index-2]->child[R_child];
 	    if ((temp_node != NULL) && (temp_node->color == RED)) {
-		/* // change the color of it's parent and uncle to
+		/*  change the color of it's parent and uncle to
 		    black, if they are red.*/
 		stack[index-2]->color = RED;
 		stack[index-1]->color = temp_node->color = BLACK;
@@ -129,7 +128,7 @@ Insertion(int data)
 	    } else {
 		if (child[index-1] == L_child) {
 		    temp_node = stack[index-1];
-		} else {/* ///////// Single Left rotation using parent */
+		} else {/* Single Left rotation using parent */
 		    temp_node_2 = stack[index-1];
 		    temp_node = temp_node_2->child[R_child];
 		    temp_node_2->child[R_child] =
@@ -137,7 +136,7 @@ Insertion(int data)
 		    temp_node->child[L_child] = temp_node_2;
 		    stack[index-2]->child[L_child] = temp_node;
 		}
-		/* //// Single Left rotation using grand parent. */
+		/*Single Left rotation using grand parent. */
 		temp_node_2 = stack[index-2];
 		temp_node_2->color = RED;
 		temp_node->color = BLACK;
@@ -150,10 +149,10 @@ Insertion(int data)
 		break;
 	    }
 	} else {
-	    /* // if the parent is right child of it's parent do this. */
+	    /*  if the parent is right child of it's parent do this. */
 	    temp_node = stack[index-2]->child[L_child];
 	    if ((temp_node != NULL) && (temp_node->color == RED)) {
-		/* /change the color of the parent and uncle to black,
+		/* change the color of the parent and uncle to black,
 		    if they are red.*/
 		stack[index-2]->color = RED;
 		stack[index-1]->color = temp_node->color = BLACK;
@@ -161,7 +160,7 @@ Insertion(int data)
 	    } else {
 		if (child[index-1] == R_child) {
 		    temp_node = stack[index-1];
-		} else {/* /////// Single right rotation using parent */
+		} else {/*Single right rotation using parent */
 		    temp_node_2 = stack[index-1];
 		    temp_node = temp_node_2->child[L_child];
 		    temp_node_2->child[L_child] =
@@ -169,7 +168,7 @@ Insertion(int data)
 		    temp_node->child[R_child] = temp_node_2;
 		    stack[index-2]->child[R_child] = temp_node;
 		}
-		/* //// Single right rotation using grand parent */
+		/* Single right rotation using grand parent */
 		temp_node_2 = stack[index-2];
 		temp_node->color = BLACK;
 		temp_node_2->color = RED;
@@ -183,7 +182,7 @@ Insertion(int data)
 	    }
 	}
     }
-    root->color = BLACK; /* ///// change the root node color to black. */
+    root->color = BLACK; /*change the root node color to black. */
     return;
 }
 
@@ -207,7 +206,7 @@ int main(void)
 		printf("Enter the data to insert:");
 		__fpurge(stdin);
 		data = atoi(fgets(buffer, Buf_Size, stdin));
-		Insertion(data);    /* // calling Insertion function. */
+		Insertion(data);    /* calling Insertion function. */
 		break;
 	case 'b':
 		printf("\nInorder Traversal:\n");
