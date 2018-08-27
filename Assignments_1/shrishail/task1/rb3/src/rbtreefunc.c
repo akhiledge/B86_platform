@@ -55,9 +55,9 @@ rbtree *alternode(rbtree *root,
     return root;                                                                
 }                                                                               
 rbtree *right_rotategp(rbtree *root, 
-        rbtree *grandparent)  ///function definition for alternig a node which\
-           takes a arguments root and grandparent are pointer to a structure \
-           and returns  pointer to a structure of type rbtree                  
+        rbtree *grandparent) ///function definition for right rotating\
+           grandparent takes a arguments root and grandparent are pointer\
+           to a structure and returns pointer to a structure of type rbtree                  
 {                                                                               
     rbtree *parent = grandparent -> left;                                      
     grandparent->left = parent->right;                                          
@@ -76,11 +76,12 @@ rbtree *right_rotategp(rbtree *root,
         return root;                                                            
     }                                                                           
     return root;                                                                
-}                                                                               
+}///end of rightrotate grandparent function                                                                               
 rbtree *left_rotategp(rbtree *root, 
-        rbtree *grandparent) ///function definition for leftrotate grandparent\
-           which takes a arguments root and grandparent are pointer to a\
-           structure  and returns  pointer to a structure of type rbtree                                    
+        rbtree *grandparent) ///function definition for leftrotate\
+           grandparent which takes a arguments root and grandparent\
+           are pointer to a structure  and returns  pointer to a\
+           structure of type rbtree                                    
 {                                                                               
     rbtree *parent = grandparent->right;                                     
     grandparent->right = parent->left;                                          
@@ -100,10 +101,10 @@ rbtree *left_rotategp(rbtree *root,
     }                                                                           
     parent->parent->right = parent;           
     return root;                                                                
-}                                                                               
-void right_rotate(rbtree *parent)  ///function definition for left rotate which\
-         takes an argument parent which is a poiter to structure and it\
-         returns void 
+}///end of leftrotate grnadparent function                                                                               
+void right_rotate(rbtree *parent) ///function definition for right rotate\
+         which takes an argument parent which is a poiter to structure\
+         and it returns void 
 {         
     rbtree *child = parent->left;                                             
     parent->parent->right = child;                                              
@@ -115,10 +116,11 @@ void right_rotate(rbtree *parent)  ///function definition for left rotate which\
     child->right = parent;                                                      
     parent->left = NULL;                                                        
     parent->right = NULL;                                                       
-}
-void left_rotate(rbtree *parent) ///function definition for left rotate which\
-         takes an argument parent which is a poiter to structure and  it \
-         returns void    
+}///end of right rotate node function
+
+void left_rotate(rbtree *parent) ///function definition for left rotate \
+         which takes an argument parent which is a poiter to structure\
+         and it returns void    
 {                                                                               
     rbtree *child = parent->right;                                            
     parent->parent->left = child;                                               
@@ -129,5 +131,5 @@ void left_rotate(rbtree *parent) ///function definition for left rotate which\
     child->right = parent->left;                                                
     child->left = parent;                                                       
     parent->left = NULL;                                                        
-    parent->right = NULL;                                                       
-}        
+    parent->right = NULL;
+}///end of left rotate node function        

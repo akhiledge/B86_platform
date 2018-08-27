@@ -7,7 +7,7 @@
  * last modified:23-8-18
  */
 void display(FILE *fp2, 
-        int *argc)///function definition for display which takes\
+        int argc)///function definition for display which takes\
          arguments file pointer and argument count and returns void
 {
     struct hashtable *temp = NULL;
@@ -30,5 +30,7 @@ void display(FILE *fp2,
             }
             printf("total:%-7d\n", count);
         }
+        count = 0;
     }
-}
+    fclose(fp2);
+}///end of function displaying the contents 

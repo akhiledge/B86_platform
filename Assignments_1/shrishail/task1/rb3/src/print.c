@@ -5,12 +5,16 @@
  * Last modified:23-8-18
  */
 
-void print(rbtree *root) {                                                     
+void print(rbtree *root) ///function definition for printing a nodes\
+         which takes arguments root is pointer toa structure of type\
+         rbtree and returns void   
+{ 
     inorder(root); ///function call for inorder traversal   
 }                                                                               
 
-///Inorder function(Recursive)                                                  
-void inorder(rbtree *root)                                                     
+void inorder(rbtree *root) ///function definition for inorder traversal\
+         which takes argument root which is a pointer to structure\
+         and returns void         
 {                                                                               
     if (root != NULL) {
         inorder(root->left);                                                    

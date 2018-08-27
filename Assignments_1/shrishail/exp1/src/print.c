@@ -6,7 +6,7 @@
  * last modified:23-8-18
  */
 void copy_file(FILE *fp2,
-        int *argc)///Function definition for copying contents into file \
+        int argc)///Function definition for copying contents into file \
          which takes aguments file pointer and argument count which\
          returns void
 {
@@ -14,9 +14,11 @@ void copy_file(FILE *fp2,
     int index = 0;
     int j_index = 0;
     int count = 0;
+    fprintf(fp2, "\twords\t|filename\t|count\n");
     for(index = 0; index < SIZE; index++){///iterate till the end of \
         indexex in hash table
         if (hasharray[index] != NULL) {
+            fprintf(fp2, "string starting from %c\n", *(hasharray[index]->str));
             temp = hasharray[index];
             while (temp != NULL) {
                 for (j_index = 0; j_index < (argc-2) \
@@ -32,6 +34,7 @@ void copy_file(FILE *fp2,
             }
             fprintf(fp2, "total:%-10d\n", count);
         }
+        count = 0;
     }
     fclose(fp2);
 }
