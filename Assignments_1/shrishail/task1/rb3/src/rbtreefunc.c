@@ -26,7 +26,7 @@ rbtree *alternode(rbtree *root,
 
             if (uncle == NULL || (uncle->color == BLACK)) {
                 if ((grandparent->left == parent)  && (parent->left == newnode))
-                    root=right_rotategp(root,grandparent);
+                    root = right_rotategp(root,grandparent);
                 else if ((grandparent->left == parent) \
                         && (parent->left != newnode)) {
                     left_rotate(parent);
