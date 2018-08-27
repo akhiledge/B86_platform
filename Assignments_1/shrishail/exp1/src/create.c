@@ -7,25 +7,22 @@
  * last modified:23-8-18
  */
 
-struct hashtable *create(char *str)///function definition for creatig\
+struct hashtable *create_node(char *str)///function definition for creating\
                      a node which takes string as a argument and returns\
                      pointer to a structure
 {
-    ///allocating a memory for newnode
-    struct hashtable *newnode \
-        = (struct hashtable *)malloc(sizeof(struct hashtable));
-    if(newnode == NULL)
-    {
+    struct hashtable *newnode;
+    newnode  = (struct hashtable *)malloc(sizeof(struct hashtable));
+    if (newnode == NULL) { ///malloc validation
         printf("malloc failed\n");
         exit(0);
     }
-    ///creating newnode to insert in to hash table
-    newnode->str=(char *)malloc(sizeof(char)*MAX);
-    strcpy(newnode->str,str); ///copying string 
+    newnode->str = (char *)malloc(sizeof(char)*MAX);
+    strcpy(newnode->str, str); ///copying string 
     assert(newnode); 
-    memset(newnode->count,0,MAX);
-    newnode->next=NULL;
+    memset(newnode->count, 0, MAX);
+    newnode->next = NULL;
     return newnode;
-}
+}///end of creating node function
 
 

@@ -7,8 +7,7 @@
  * Last modified:23-8-18
  */
 
-
-rbtree *insert(rbtree *root, 
+rbtree *insert_node(rbtree *root, 
         int val)///function definition for insert operation which takes argument\
            root which is apointer to structure rbtree and value of type integer\
            which  returns pointer to structure rbtree     
@@ -19,21 +18,22 @@ rbtree *insert(rbtree *root,
     int left;                                                               
     int right;                                                              
     if (root == NULL) {                   
-        root = create(root,val);         
+        root = create_node(root, val);         
         root->color = BLACK;                      
         return root;                                     
     }                                                                           
     ptr = root;                                                                
-    while ((ptr != NULL) && ((ptr->val > val) || (ptr-> val < val))) {
-        if (ptr-> val > val) {
-
-            prev = ptr;                                                        
+    while ((ptr != NULL) && ((ptr->val > val) || (ptr->val < val))) {
+        if (ptr-> val > val) { ///if the root value is greater than next\
+            given input then traverse left and insert node
+                prev = ptr;                                                        
             left = 1;                                                           
             right = 0;                                                          
             ptr = ptr->left;                                                  
         }                                                                       
-        else {                                                                   
-            prev = ptr;                                                        
+        else { ///if the root value is less than next given input traverse\
+            right and insert node            
+                prev = ptr;                                                        
             left = 0;                                                           
             right = 1;                                                          
             ptr = ptr->right;                                                 
@@ -41,15 +41,15 @@ rbtree *insert(rbtree *root,
     }                                                                           
     if (ptr == NULL) {                                                           
         if (left) {
-            newnode = create(prev, val);                                      
+            newnode = create_node(prev, val);                                      
             prev->left = newnode;                                                   
         }                                                                       
         else if (right) {
-            newnode = create(prev, val);                                      
+            newnode = create_node(prev, val);                                      
             prev->right = newnode;                                                  
         }                                                                       
         root = alternode(root, newnode);                                          
         return root;                                                            
     }                                                                           
-}                                                               
+}///end of insert node function                                                              
 

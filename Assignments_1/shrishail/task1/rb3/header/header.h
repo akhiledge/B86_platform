@@ -7,8 +7,6 @@
  * Last modified:23-8-18
  */
 
-
-
 /*
  * header Guard
  */
@@ -49,7 +47,7 @@
  */
 #define BLACK 0      
 
-typedef struct tree{                                                                    
+typedef struct tree {                                                                    
     int val;                                                                   
     char color:1;                                                               
     struct tree *left;                                                          
@@ -58,13 +56,13 @@ typedef struct tree{
 }rbtree;                                                                              
 /*
  * function prototype for insert operation
- * /
- rbtree *insert(rbtree *, int);       
+ */
+ rbtree *insert_node(rbtree *, int);       
 
 /*
  * function prototype for creating a node
  */
-rbtree *create(rbtree *, int);      
+rbtree *create_node(rbtree *, int);      
 
 /*
  * function prototype for printing a node

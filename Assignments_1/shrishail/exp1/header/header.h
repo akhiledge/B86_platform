@@ -1,3 +1,4 @@
+
 /*
  * File:header.h
  * author:Shrishail Satihal
@@ -45,22 +46,22 @@
  *@def SIZE
  */
 #define SIZE 26
-struct hashtable{
+struct hashtable {
     char *str;
     int count[MAX];
     char fname[MAX][SIZE];
-    struct hashtable* next;
+    struct hashtable *next;
 };
 struct hashtable *hasharray[SIZE];
 /*
  * Function prototype for creating a hash table
  */
-struct hashtable *create(char *str);
+struct hashtable *create_node(char *);
 
 /*
  * function prototype for inserting a node
  */
-void insert(char *str, char *dest,int argc);
+void insert_node(char *, char *, int);
 
 /*
  * function prototype for getting index of string
@@ -70,10 +71,10 @@ int get_index(char ch);
 /*
  * function prototype for copying contents of file
  */
-void copy_file(FILE *fp2, int *argc);
+void copy_file(FILE *, int);
 
 /*
  * function prototype for displaying the contents of file
  */
-void display(FILE *fp2, int *argc); 
+void display(FILE *, int); 
 #endif///end of header guard

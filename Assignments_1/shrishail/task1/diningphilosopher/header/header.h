@@ -34,7 +34,7 @@
 /**
 * @def SIZE
 */
-#define SIZE 6
+#define SIZE 5
 
 /**
 * @def THINK
@@ -58,23 +58,23 @@ int state[SIZE]; /*!@ state is an array of SIZE*/
  *function prototype for philosopher test which takes an argument philosopher\
 number of type int and returns void 
  */
-void philosophertest(int pnum);
+void philosophertest(int);
 
 /**
  * function prototype for take chop which takes an argument philosophernumber\
  * of type int and returns void
  */
-void takechop(int pnum);
+void takechop(int);
 
 /**
  * function prototype for put chop which takes an argument philosophernumber\
  * of type int and returns void
  */
-void putchop(int pnum);
+void putchop(int);
 
 /**
  * function prototype for philosopher which takes an argument philosophernumber\
  * of type void and returns void pointer
  */
-void* philosopher(void* num);
-#endif ///end of headerguard
+void *philosopher(void *);
+#endif /* end of headerguard */

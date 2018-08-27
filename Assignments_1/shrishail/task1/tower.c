@@ -54,14 +54,16 @@ int main(void)
     honoi which takes argumnets disks  A as a source tower B as \
         destination tower C as a auxilary tower
         free(str);
-    str=NULL;
+    str = NULL;
     return 0;
 #endif ///end of headerguard
 }
 void tower_of_honoi(int disk1,
         char source,
         char destination,
-        char auxilary)
+        char auxilary) ///function definition for tower of honoi which\
+         takes arguments disk of type integer source destination auxilary\
+         tower of type char which returns void
 {
     if (disk1 == 1) {///if disk is only one move disk \
         from source to destination
@@ -69,10 +71,9 @@ void tower_of_honoi(int disk1,
         return;
     }
     else { ///recursive call for disks to move from source to auxilary rod
-        tower_of_honoi(disk1-1,source, auxilary, destination);
+        tower_of_honoi(disk1-1, source, auxilary, destination);
         printf("disk%d moves from %c to %c\n", disk1, source, destination);
-        tower_of_honoi(disk1-1,auxilary, destination, source);///recursive\
+        tower_of_honoi(disk1-1, auxilary, destination, source);///recursive\
         call for disks to move from auxilary to destination 
-
     }
 }///end for tower of honoi function

@@ -13,9 +13,9 @@ int main(void)
     str = (char *) malloc(MAX);
     assert(str);
     int option;
-    int val;              
+    int val; ///value is of type integer              
     while (1) {
-        printf("Enter choice\n");                                               
+        printf("Enter choice\n");///menu for rb tree functions                                               
         printf("1.insert node into tree\n2.display the nodes\n3.exit\n");                        
         fgets(str, MAX, stdin);                                                 
         assert(str);                                                            
@@ -24,16 +24,17 @@ int main(void)
             case 1: printf("input a number\n");                 
                     fgets(str, MAX, stdin);                                     
                     val = atoi(str);                                           
-                    root = insert(root, val);                             
-                    break;                                                      
-            case 2: print(root);                              
+                    root = insert_node(root, val); ///function call for\
+                    inserting a node                    
+                        break;                                                      
+            case 2: print(root); ///function call for printing a nodes                      
                     break;                                                      
             case 3: exit(0);                                                    
             default: printf("Invalid argument! check again\n");                                
         }                                                                       
     }        
     free(str);
-    str=NULL;
+    str = NULL;
     return 0;    
 }                                                                               
 
