@@ -1,8 +1,8 @@
 /**
- * File              : ../Dining_Philosophers/Diners_philosphers.c
+ * File              : Diners_philosphers.c
  * Author            : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
  * Date              : 16.07.2018
- * Last Modified Date: 24.08.2018
+ * Last Modified Date: 27.08.2018
  * Last Modified By  : Vamshi Krishna <vk.yaragani@globaledgesoft.com>
  */
 #include <stdio.h>

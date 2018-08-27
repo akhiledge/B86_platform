@@ -81,9 +81,11 @@ int main(void)
     __fpurge(stdin);
     dst_tower = getchar();
     switch (dst_tower) {
+    case 'b':
     case 'B':
 	aux_tower = 'C';
 	break;
+    case 'c':
     case 'C':
 	aux_tower = 'B';
 	break;
