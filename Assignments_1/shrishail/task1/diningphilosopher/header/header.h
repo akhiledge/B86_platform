@@ -1,13 +1,14 @@
-/**
+
+/*
  * File:header.h
- * Author:Shrishail satihal
- * Description:Dining philosopher problem
- * Date:23-8-18
+ * author:shrishail satihal
+ * Description:dining philosopher problem
+ * date:23-8-18
  * Last modified:23-8-18
  */
 
 /*
- * header Guard
+ * Header Guard
  */
 #ifndef _HEADER_H
 
@@ -16,65 +17,72 @@
  */
 #define _HEADER_H
 
-/**
-*@headerfile stdio.h
+/*
+ *@header pthread.h
 */
+#include<pthread.h>
+
+/*
+ *@header semaphore.h
+*/
+#include<semaphore.h>
+
+/*
+ *@header stdio.h
+ */
 #include <stdio.h>
 
-/**
-*@headerfile pthread.h
-*/
-#include <pthread.h>
-
-/**
-*@headerfile semaphore.h
-*/
-#include <semaphore.h>
-
-/**
-* @def SIZE
-*/
+/*
+ *@ def SIZE 5
+ */
 #define SIZE 5
 
-/**
-* @def THINK
-*/
-#define THINK 2
+/*
+ *@def THINKING 2
+ */
+#define THINKING 2
 
-/**
-* @def HUNGRY
-*/
+/*
+ *@def HUNGRY 1
+ */
 #define HUNGRY 1
 
-/**
-* @def EAT
-*/
-#define EAT 0
-sem_t sem; /*!@sem sem is variable of type sem_t*/
-sem_t Semaphore[SIZE];
-int state[SIZE]; /*!@ state is an array of SIZE*/
-
-/**
- *function prototype for philosopher test which takes an argument philosopher\
-number of type int and returns void 
+/*
+ *@def EATING 0
  */
-void philosophertest(int);
+#define EATING 0
 
-/**
- * function prototype for take chop which takes an argument philosophernumber\
- * of type int and returns void
+/*
+ *@def LEFT (phnum + SIZE - 1) % SIZE
  */
-void takechop(int);
+#define LEFT ((phnum + SIZE - 1) % SIZE)
 
-/**
- * function prototype for put chop which takes an argument philosophernumber\
- * of type int and returns void
+/*
+ *@def RIGHT (phnum + 1) % SIZE
  */
-void putchop(int);
+#define RIGHT ((phnum + 1) % SIZE)
 
-/**
- * function prototype for philosopher which takes an argument philosophernumber\
- * of type void and returns void pointer
+int state[SIZE];
+sem_t sem; /*!@sem is variable of type sem_t*/
+sem_t Semaphore[SIZE]; /*!@ state is an array of SIZE*/
+
+/*
+ * function prototype for philosopher
  */
 void *philosopher(void *);
-#endif /* end of headerguard */
+
+/*
+ * function prototype for put fork
+ */
+void put_fork(int);
+
+/*
+ * function prototype for take fork
+ */
+void take_fork(int);
+
+/*
+ * function prototype for philosopher test
+ */
+void philosopher_test(int);
+#endif///end of header guard
