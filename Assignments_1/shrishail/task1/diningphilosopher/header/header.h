@@ -85,4 +85,4 @@ void take_fork(int);
  * function prototype for philosopher test
  */
 void philosopher_test(int);
-#endif///end of header guard
+#endif /*end of header guard*/
