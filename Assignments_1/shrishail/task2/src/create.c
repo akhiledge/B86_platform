@@ -5,6 +5,7 @@
  * Description:creating a node to insert into hash table
  * Date:23-8-18
  * last modified:23-8-18
+ * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>
  */
 
 struct hashtable *create_node(char *str) /*function definition for creating

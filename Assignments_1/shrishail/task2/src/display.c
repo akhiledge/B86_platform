@@ -5,6 +5,7 @@
  * Description:displaying the contents
  * Date:23-8-18
  * last modified:23-8-18
+ * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>
  */
 void display(FILE *fp2,
 	int argc) /*function definition for display which takes

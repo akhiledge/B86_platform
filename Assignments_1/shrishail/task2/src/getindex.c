@@ -4,6 +4,7 @@
  * Description:function for getting index of each string
  * Date:23-8-18
  * last modified:23-8-18
+ * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>
  */
 
 int get_index(char ch) /*function definition for getting index of each

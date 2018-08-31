@@ -5,6 +5,7 @@
  * Description:inserting the words in to hashtable
  * Date:23-8-18
  * last modified:23-8-18
+ * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>
  */
 
 struct hashtable *root;

@@ -4,6 +4,7 @@
  * Description:copying the contents into another file
  * Date:23-8-18
  * last modified:23-8-18
+ * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>
  */
 void copy_file(FILE *fp2,
         int argc)///Function definition for copying contents into file \
