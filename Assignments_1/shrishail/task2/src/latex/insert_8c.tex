@@ -1,0 +1,69 @@
+\hypertarget{insert_8c}{\section{insert.\-c File Reference}
+\label{insert_8c}\index{insert.\-c@{insert.\-c}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{insert_8c_aa6bd45f86763222166590435b590c6d1}{insert} (char $\ast$str, char $\ast$dest, int argc)
+\item 
+int \hyperlink{insert_8c_ac4de5292f28f511946fd117bcc836d10}{mystrcasecmp} (char $\ast$str1, char $\ast$str2)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhashtable}{hashtable} $\ast$ \hyperlink{insert_8c_a9ff7d070bd6f3f5a625bc9f38ab5cfa6}{root} = N\-U\-L\-L
+\item 
+struct \hyperlink{structhashtable}{hashtable} $\ast$ \hyperlink{insert_8c_aaa527dc643c66acd5dc3fbf1e88361cc}{prev} = N\-U\-L\-L
+\item 
+struct \hyperlink{structhashtable}{hashtable} $\ast$ \hyperlink{insert_8c_a9a68a97afa2eb827f5b9af6a5b18c3cc}{newnode} = N\-U\-L\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{insert_8c_aa6bd45f86763222166590435b590c6d1}{\index{insert.\-c@{insert.\-c}!insert@{insert}}
+\index{insert@{insert}!insert.c@{insert.\-c}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void insert (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{dest, }
+\item[{int}]{argc}
+\end{DoxyParamCaption}
+)}}\label{insert_8c_aa6bd45f86763222166590435b590c6d1}
+get index for particular string
+
+if index is N\-U\-L\-L
+
+create a node
+
+store address of newnode into hasharray
+
+increment the node
+
+if root node and next string both are same then increase the count
+
+if root string is greater than next string
+
+create a newnode
+
+store newnode address into hash array
+
+increment count \hypertarget{insert_8c_ac4de5292f28f511946fd117bcc836d10}{\index{insert.\-c@{insert.\-c}!mystrcasecmp@{mystrcasecmp}}
+\index{mystrcasecmp@{mystrcasecmp}!insert.c@{insert.\-c}}
+\subsubsection[{mystrcasecmp}]{\setlength{\rightskip}{0pt plus 5cm}int mystrcasecmp (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str1, }
+\item[{char $\ast$}]{str2}
+\end{DoxyParamCaption}
+)}}\label{insert_8c_ac4de5292f28f511946fd117bcc836d10}
+
+
+\subsection{Variable Documentation}
+\hypertarget{insert_8c_a9a68a97afa2eb827f5b9af6a5b18c3cc}{\index{insert.\-c@{insert.\-c}!newnode@{newnode}}
+\index{newnode@{newnode}!insert.c@{insert.\-c}}
+\subsubsection[{newnode}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hashtable}$\ast$ newnode = N\-U\-L\-L}}\label{insert_8c_a9a68a97afa2eb827f5b9af6a5b18c3cc}
+\hypertarget{insert_8c_aaa527dc643c66acd5dc3fbf1e88361cc}{\index{insert.\-c@{insert.\-c}!prev@{prev}}
+\index{prev@{prev}!insert.c@{insert.\-c}}
+\subsubsection[{prev}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hashtable}$\ast$ prev = N\-U\-L\-L}}\label{insert_8c_aaa527dc643c66acd5dc3fbf1e88361cc}
+\hypertarget{insert_8c_a9ff7d070bd6f3f5a625bc9f38ab5cfa6}{\index{insert.\-c@{insert.\-c}!root@{root}}
+\index{root@{root}!insert.c@{insert.\-c}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf hashtable}$\ast$ root = N\-U\-L\-L}}\label{insert_8c_a9ff7d070bd6f3f5a625bc9f38ab5cfa6}

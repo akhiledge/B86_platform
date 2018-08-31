@@ -5,6 +5,7 @@
  * Description:dining philosopher problem
  * date:23-8-18
  * Last modified:23-8-18
+ * Last modified by:Shrishail Satihal <s.shrishail@globaledgesoft.com>
  */
 
 /*
@@ -85,4 +86,4 @@ void take_fork(int);
  * function prototype for philosopher test
  */
 void philosopher_test(int);
-#endif///end of header guard
+#endif /*end of header guard*/
