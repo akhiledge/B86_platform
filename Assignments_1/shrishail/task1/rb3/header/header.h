@@ -5,6 +5,7 @@
  * Description:Rb tree insertion
  * Date:23-8-18
  * Last modified:23-8-18
+ * Last modified by:Shrishail Satihail<s.shrishail@globaledgesoft.com>
  */
 
 /*
@@ -20,17 +21,17 @@
 /*
  * @headerfile stdio.h
  */
-#include<stdio.h>       
+#include<stdio.h>
 
 /*
  * @headerfile stdlib.h
  */
-#include<stdlib.h>    
+#include<stdlib.h>
 
 /*
  * @headerfile assert.h
  */
-#include<assert.h>   
+#include<assert.h>
 
 /*
  * @def MAX 50
@@ -40,34 +41,34 @@
 /*
  * @def RED 1
  */
-#define RED 1       
+#define RED 1
 
 /*
  * @def BLACK 0
  */
-#define BLACK 0      
+#define BLACK 0
 
-typedef struct tree {                                                                    
-    int val;                                                                   
-    char color:1;                                                               
-    struct tree *left;                                                          
-    struct tree *right;                                                         
-    struct tree *parent;                                                        
-}rbtree;                                                                              
+typedef struct tree {
+    int val;
+    char color:1;
+    struct tree *left;
+    struct tree *right;
+    struct tree *parent;
+} rbtree;
 /*
  * function prototype for insert operation
  */
- rbtree *insert_node(rbtree *, int);       
+ rbtree *insert_node(rbtree *, int);
 
 /*
  * function prototype for creating a node
  */
-rbtree *create_node(rbtree *, int);      
+rbtree *create_node(rbtree *, int);
 
 /*
  * function prototype for printing a node
  */
-void print(rbtree *);     
+void print(rbtree *);
 
 /*
  * inorder traversal
@@ -82,12 +83,12 @@ rbtree *alternode(rbtree *, rbtree *);
 /*
  * Function prototype for right rotating grand parent
  */
-rbtree *right_rotategp(rbtree *, rbtree *); 
+rbtree *right_rotategp(rbtree *, rbtree *);
 
 /*
  * Function prototype for left rotating grandparent
  */
-rbtree *left_rotategp(rbtree *, rbtree *);   
+rbtree *left_rotategp(rbtree *, rbtree *);
 
 /*
  *function prototype for right rotate
@@ -97,5 +98,5 @@ void right_rotate(rbtree *);
 /*
  * function prototype for left rotate
  */
-void left_rotate(rbtree *);           
-#endif ///end of header guard
+void left_rotate(rbtree *);
+#endif /*end of header guard*/
