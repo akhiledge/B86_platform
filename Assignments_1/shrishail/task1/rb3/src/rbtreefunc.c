@@ -64,6 +64,44 @@ rbtree *right_rotategp(rbtree *root,
 
     grandparent->left = parent->right;
     parent->right = grandparent;
+            if (uncle == NULL || (uncle->color == BLACK)) {
+                if ((grandparent->left == parent)  && (parent->left == newnode))
+                    root = right_rotategp(root,grandparent);
+                else if ((grandparent->left == parent) \
+                        && (parent->left != newnode)) {
+                    left_rotate(parent);
+                    root = right_rotategp(root, grandparent);
+                }
+                else if ((grandparent->left != parent) \
+                        && (parent->left != newnode)) {
+                    root = left_rotategp(root,grandparent);
+                }
+                else if ((grandparent->left != parent) \
+                        && (parent->left == newnode)) {
+                    right_rotate(parent);
+                    root = left_rotategp(root,grandparent);
+                }
+                return root;
+            }
+            else {
+                parent->color = BLACK;                                          
+                uncle->color = BLACK;                                           
+                if (grandparent != root)                                         
+                    grandparent->color = RED;                                   
+                return root;                                                    
+            }                                                                   
+        }                                                                       
+    }                                                                           
+    return root;                                                                
+}                                                                               
+rbtree *right_rotategp(rbtree *root, 
+        rbtree *grandparent) ///function definition for right rotating\
+           grandparent takes a arguments root and grandparent are pointer\
+           to a structure and returns pointer to a structure of type rbtree                  
+{                                                                               
+    rbtree *parent = grandparent -> left;                                      
+    grandparent->left = parent->right;                                          
+    parent->right = grandparent;                                                
     if ((grandparent->parent != NULL) \
 	    && (grandparent->parent->left == grandparent))
 	grandparent->parent->left = parent;
