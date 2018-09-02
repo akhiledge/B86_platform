@@ -1,5 +1,14 @@
+
+/**
+ * File              : dining_header.h
+ * Author            : Sachu George <g.sachu@globaledgesoft.com>
+ * Date              : 13.07.2018
+ * Last Modified Date: 02.09.2018
+ * Last Modified By  : Sachu George <g.sachu@globaledgesoft.com>
+ */
+
 /*
- * @brief header_file
+ * \brief header_file
  * */
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,22 +18,23 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <semaphore.h>
+
 /*
- * @brief Macros defined for states
+ * \brief Macros defined for states
  * */
 #define THINKING 0
 #define HUNGRY 1
 #define EATING 2
 
-#define SIZE 5 ///Macro SIZE defined
+#define SIZE 5 /* Macro SIZE defined */
 
 /*
- * @brief Macro definition to find philosopher numbers
+ * \brief Macro definition to find philosopher numbers
  * */
-#define LEFT_P (value + (SIZE - 1)) % SIZE
-#define RIGHT_P (value + 1) % SIZE
+#define LEFT_P ((value + (SIZE - 1)) % SIZE)
+#define RIGHT_P ((value + 1) % SIZE)
 
-///Function prototypes
+/* Function prototypes */
 void *philosopher_fun(void *value);
 void fork_acquire(int value);
 void check_for_fork(int value);
