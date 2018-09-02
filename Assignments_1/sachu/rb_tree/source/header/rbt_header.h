@@ -1,4 +1,12 @@
 /**
+ * File              : rbt_header.h
+ * Author            : Sachu George <g.sachu@globaledgesoft.com>
+ * Date              : 13.07.2018
+ * Last Modified Date: 02.09.2018
+ * Last Modified By  : Sachu George <g.sachu@globaledgesoft.com>
+ */
+
+/**
  * @brief Header file with structure declaration and function prototypes
  * */
 #include <stdio.h>
@@ -6,26 +14,30 @@
 #include <stdio_ext.h>
 #include <assert.h>
 
-///Macro definitions
+/* Macro definitions */
 #define MIN 0
 #define MAX 1
 #define SIZE 10
 #define RED 0
 #define BLACK 1
 #define INVALID -1
-#define COLOR (root->color == 0)?("RED"):("BLACK")
+#define COLOR ((root->color == 0) ? ("RED") : ("BLACK"))
 
-///Strucure declaration
-typedef struct bst
-{
-    struct bst *prev;  /*< prev is a pointer to store previous node address >*/
+/* Strucure declaration */
+struct bst {
+    struct bst *prev;  /*< prev is a pointer to store previous i
+    node address >*/
     int data;          /*< data is integer to store element >*/
     int color;         /*< color is integer to store node color>*/
-    struct bst *left;  /*< left is a pointer to store left node address >*/
-    struct bst *right; /*< right is a pointer to store right node address >*/
-}bst_t;
+    struct bst *left;  /*< left is a pointer to store left
+    node address >*/
+    struct bst *right; /*< right is a pointer to store
+    right node address >*/
+};
 
-///Function prototypes
+typedef struct bst bst_t;
+
+/* Function prototypes */
 int check_uncle(bst_t **parent);
 int my_atoi(char *str);
 
