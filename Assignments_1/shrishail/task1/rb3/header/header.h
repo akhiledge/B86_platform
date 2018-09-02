@@ -2,8 +2,8 @@
 /*
  * File:header.h
  * Author:Shrishail Satihal
- * Description:Rb tree insertion
- * Date:23-8-18
+ * Description:header file for Rb tree insertion
+ * Date:12-7-18
  * Last modified:23-8-18
  * Last modified by:Shrishail Satihail<s.shrishail@globaledgesoft.com>
  */

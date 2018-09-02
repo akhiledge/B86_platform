@@ -3,10 +3,11 @@
  * File:main.c
  * author:shrishail satihal
  * Description:dining philosopher problem
- * date:23-8-18
+ * date:13-7-18
  * Last modified:23-8-18
  * Last modified by:Shrishail Satihal <s.shrishail@globaledgesoft.com>
  */
+
 int philospher1[SIZE] = { 0, 1, 2, 3, 4 };
 int main(void)
 {

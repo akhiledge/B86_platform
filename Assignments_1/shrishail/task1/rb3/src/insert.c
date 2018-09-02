@@ -1,9 +1,9 @@
 
 /*
  * File:insert.c
- * Description:inserting a node a node for RB tree
+ * Description:inserting a node for RB tree
  * Author:Shrishail Satihal
- * Date:23-8-18
+ * Date:13-7-18
  * Last modified:23-8-18
  * Last modified by:Shrishail Satihal<s.shrishail@globaledgesoft.com>
  */

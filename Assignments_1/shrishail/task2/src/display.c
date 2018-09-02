@@ -2,11 +2,12 @@
 /*
  * File:display.c
  * Author:shrishail satihal
- * Description:displaying the contents
- * Date:23-8-18
+ * Description:displaying the contents of hash table
+ * Date:20-7-18
  * last modified:23-8-18
  * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>
  */
+
 void display(FILE *fp2,
 	int argc) /*function definition for display which takes
 		    arguments file pointer and argument count and returns void*/

@@ -2,9 +2,10 @@
 /*
  * File:main.c
  * Author:shrishail Satihal
- * Date:23-8-18
+ * Date:13-7-18
  * Last modified:23-8-18
  * Description:RB tree insertion
+ * Last modified by:Shrishail Satihal<s.shrishail@globaledgesoft.com>
  */
 
 int main(void)
@@ -15,7 +16,7 @@ int main(void)
     str = (char *) malloc(MAX);
     assert(str);
     int option;
-    int val; /*value is of type integer*/
+    int val; /* value is of type integer */
 
     while (1) {
 	printf("Enter choice\n"); /*menu for rb tree functions*/

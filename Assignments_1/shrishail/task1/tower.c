@@ -3,7 +3,7 @@
 File:tower.c
 Author:shrishail satihal
 Description:Moving a disks from one tower to another tower
-Date:23-8-18
+Date:16-7-18
 Last modified:23-8-18
 Last modified by:Shrishail Satihal <s.shrishail@globaledgesoft.com>
 */
