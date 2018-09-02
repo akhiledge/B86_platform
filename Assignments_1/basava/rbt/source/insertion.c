@@ -1,60 +1,75 @@
-/** Insertion of node to the RB_tree */
+/**
+ * File              : insertion.c
+ * Author            : Basava Prasad S J
+ * Date              : 22.07.2018
+ * Last Modified Date: 02.09.2018
+ * Last Modified By  : Basava Prasad S J
+ */
+/** @brief : Insertion module to insert the node to RB_tree */
 
-///Header file
+/**Header file inclusion */
 #include "rbt_header.h"
 
-/**insertion function definition */
+/**@brief : insertion function definition to insert a node into RB tree
+ * @param : Root node of the tree
+ * @return : Return the root of the tree 
+*/
 
 RBT_NODE *insert_node (RBT_NODE *root)
 {
-    ///variable declarations
+    /**variable declarations */
     RBT_NODE *newnode = NULL;
-    RBT_NODE *temp_ptr_current = NULL; //temporary pointers
+    RBT_NODE *temp_ptr_current = NULL;                   /*temporary pointers*/
     RBT_NODE *temp_ptr_parent = NULL;
 
-    newnode = create_node (); //create a node to insert to the tree
-    assert (newnode);   //validating NULL condition
+    newnode = create_node ();                            /*create a node to 
+                                                           insert to the tree*/
+    assert (newnode);                                    /*validating NULL 
+                                                           condition*/
     
-    //memory allocation and validations for temporary pointers
+    /**memory allocation and validations for temporary pointers*/
     temp_ptr_current = (RBT_NODE *) malloc (sizeof (RBT_NODE));
     assert (temp_ptr_current);
 
     temp_ptr_parent = (RBT_NODE *) malloc (sizeof (RBT_NODE));
     assert (temp_ptr_parent);
 
-    //No node condition
-    if (root == NULL){    //if there is no nodes make newnode as root node
+    /**No node condition checking */
+    if (root == NULL) {                                    /*if there is no 
+                                                            nodes make newnode 
+                                                            as root node*/
         root = newnode;
         root -> color = Black;
         return root;
     }
-    else{                   //if tree is present insertion accordingly
+    else {                                                 /*if tree is present 
+                                                             insertion accordingly*/
         temp_ptr_current = root;
-        while (SUCCESS){     //untill the insertion is successfull
+        while (SUCCESS) {                                  /*untill the insertion 
+                                                             is successfull*/
 
             temp_ptr_parent = temp_ptr_current;
-            if (temp_ptr_parent -> data < newnode -> data){  //to the right-side
+            if (temp_ptr_parent -> data < newnode -> data) {/*to the right-side*/
                 temp_ptr_current = temp_ptr_parent -> rchild;
 
-                if (temp_ptr_current == NULL){
+                if (temp_ptr_current == NULL) {
                     temp_ptr_parent -> rchild = newnode;
                     newnode -> parent = temp_ptr_parent;
-                //    printf ("hi\n");
                     break;
 
                 }
             }
-            else if(temp_ptr_parent -> data > newnode -> data){ //to left side
+            else if(temp_ptr_parent -> data > newnode -> data) {/*to left side*/
                 temp_ptr_current = temp_ptr_parent -> lchild;
                     
-                if (temp_ptr_current == NULL){ 
+                if (temp_ptr_current == NULL) { 
                     temp_ptr_parent -> lchild = newnode;
                     newnode -> parent = temp_ptr_parent;
-                    printf ("hi\n");
                     break;
                 }                                   
             }
-            else{                             //if the element is duplicate
+            else {                                            /*if the element 
+                                                                is duplicate*/
                 fprintf (stdout, "Duplicate elements are not allowed\n");
                 return;              
             }          
@@ -64,12 +79,14 @@ RBT_NODE *insert_node (RBT_NODE *root)
     return root;
 }
 
-/**insertion of node according to color balancing*/
-///insertion according to color function definition
+/**@brief : insertion of node according to color balancing
+ * @param : Node inserted according to BST insertion rules and root node
+ * @return : return the root node of the tree
+ */
 
 RBT_NODE *insert_color (RBT_NODE *newnode, RBT_NODE *root)
 {                                                            
-    RBT_NODE *grand_parent = NULL; //temporary pointer
+    RBT_NODE *grand_parent = NULL;                      //temporary pointer
     RBT_NODE *uncle = NULL;
 
     grand_parent = (RBT_NODE *) malloc (sizeof (RBT_NODE));
@@ -78,68 +95,68 @@ RBT_NODE *insert_color (RBT_NODE *newnode, RBT_NODE *root)
     uncle = (RBT_NODE *) malloc (sizeof (RBT_NODE));
     assert (uncle);
 
-    if (newnode -> parent -> parent != NULL){
+    if (newnode -> parent -> parent != NULL) {
 
-        if (newnode -> parent -> parent -> lchild == newnode -> parent){
+        if (newnode -> parent -> parent -> lchild == newnode -> parent) {
             uncle = newnode -> parent -> parent -> rchild;
         }
-        else{
+        else {
             uncle = newnode -> parent -> parent -> lchild;
         }
     
     grand_parent = newnode -> parent -> parent;
     
-    /*to check whether parent and uncle is red color or not*/
+    /**to check whether parent and uncle is red color or not*/
 
-    if ((newnode -> parent != NULL) && (newnode -> parent -> color == Red)){
-        if (grand_parent -> lchild != newnode -> parent){
+    if ((newnode -> parent != NULL) && (newnode -> parent -> color == Red)) {
+        if (grand_parent -> lchild != newnode -> parent) {
 
-            if ((grand_parent -> lchild -> color == Red) && 
-                (grand_parent -> lchild != NULL)){
-
+            if ((grand_parent -> lchild -> color == Red) 
+                    && (grand_parent -> lchild != NULL)) {
                 grand_parent -> lchild -> color = Black;
                 grand_parent -> color = Red;
                 newnode -> parent -> color = Black;
                 newnode = grand_parent;
             }
 
-            else{
+            else {
                 grand_parent -> rchild -> color = Black;
                 grand_parent -> color = Red;
                 newnode -> parent -> color = Black;
                 newnode = grand_parent;
             }
-            if ((newnode -> parent == NULL) && (newnode -> color == Red)){
+            if ((newnode -> parent == NULL) && (newnode -> color == Red)) {
                 newnode -> color = Black;
                 root = newnode;
                 return root;
             }
         }
     }
-    /*if uncle is black we can have following conditions */
-    if ((uncle == NULL) || (uncle -> color = Black)){
-        /*left-left case*/
-        if ((newnode -> parent -> lchild == newnode) && (grand_parent -> lchild
-                                                == newnode -> parent)){
+    /**if uncle is black we can have following conditions */
+    if ((uncle == NULL) || (uncle -> color = Black)) {
+
+        /**left-left case*/
+        if ((newnode -> parent -> lchild == newnode) 
+                && (grand_parent -> lchild == newnode -> parent)) {
             root = rotate_right (grand_parent, root);
             return root;
         }
-        /*left-right case*/
-        else if ((newnode -> parent -> rchild == newnode) && (grand_parent -> 
-                                        lchild == newnode -> parent)){
+        /**left-right case*/
+        else if ((newnode -> parent -> rchild == newnode) 
+                && (grand_parent -> lchild == newnode -> parent)) {
             root = rotate_right_left (grand_parent -> rchild, root);
             root = rotate_left (grand_parent, root);
             return root;
         }
-        /*right-right case*/
-        else if ((newnode -> parent -> rchild == newnode) && (grand_parent 
-                                          -> rchild == newnode -> parent)){
+        /**right-right case*/
+        else if ((newnode -> parent -> rchild == newnode) 
+                && (grand_parent -> rchild == newnode -> parent)) {
             root = rotate_left (grand_parent, root);
             return root;
         }
-        /*right-left case*/
-        else if ((newnode -> parent -> lchild == newnode) && (grand_parent -> 
-                                        rchild == newnode -> parent)){
+        /**right-left case*/
+        else if ((newnode -> parent -> lchild == newnode) && 
+                (grand_parent -> rchild == newnode -> parent)) {
             root = rotate_left_right (grand_parent -> lchild, root);
             root = rotate_right (grand_parent, root);
             return root;
@@ -149,68 +166,76 @@ RBT_NODE *insert_color (RBT_NODE *newnode, RBT_NODE *root)
     return root;
 }
 
-/**function definition for right rotation of child, parent and grandparent 
- * nodes */
+/**@brief :function definition for right rotation of child, parent 
+ *         and grandparent nodes 
+ *@param : grandparent node and the root node of the tree
+ *@return : return the root node of the tree
+ */
+
 RBT_NODE *rotate_right (RBT_NODE *grandparent, RBT_NODE *root)
 {
-    RBT_NODE *temp = NULL; //temporary pointer to parent
+    RBT_NODE *temp = NULL;                       /*temporary pointer to parent*/
     int color_swap = grandparent -> color;
 
     temp = (RBT_NODE *) malloc (sizeof (RBT_NODE));
     assert (temp);
     temp = grandparent -> lchild;
     
-    if (grandparent -> parent == NULL){  /*to do right rotate if grandparent is
-                                            root*/
+    if (grandparent -> parent == NULL) {         /*to do right rotate if 
+                                                   grandparent is root*/
         grandparent -> parent = temp;
         temp -> rchild = grandparent;
         temp -> parent = NULL;
         grandparent -> lchild = NULL;
-    /*after rotation swap the color of parent and grandparent*/
+
+    /**after rotation swap the color of parent and grandparent*/
 
         grandparent -> color = temp -> color;
         temp -> color = color_swap;
         root = temp;
     }
-    else{ /*if grandparent is not root */
-        
+    else {                                       /*if grandparent is not root*/
         temp -> parent = grandparent -> parent;
         temp -> rchild = grandparent;
         grandparent -> parent -> lchild = temp;
         grandparent -> parent = temp;
         grandparent -> lchild = NULL;
 
-        /* swap the colors of parent and grandparent */
+        /** swap the colors of parent and grandparent */
         grandparent -> color = temp -> color;
         temp -> color = color_swap;
     }
     return root;
 }
-/**function definition for left rotation of child, parent and grandparent 
- * nodes */
+/**@brief : function definition for left rotation of child, parent and 
+ *          grandparent nodes 
+ *@param : grandparent node and root node of the tree
+ *@return : return root node of the tree
+ */
         
 RBT_NODE *rotate_left (RBT_NODE *grandparent, RBT_NODE *root)
 {
-    RBT_NODE *temp = NULL; //temporary pointer to parent
+    RBT_NODE *temp = NULL;                      /*temporary pointer to parent*/
     int color_swap = grandparent -> color;
 
     temp = (RBT_NODE *) malloc (sizeof (RBT_NODE));
     assert (temp);
     temp = grandparent -> rchild;
     
-    if (grandparent -> parent == NULL){  /*to do right rotate if grandparent is
-                                            root*/
+    if (grandparent -> parent == NULL) {        /*to do right rotate if 
+                                                  grandparent is root*/
         grandparent -> parent = temp;
         temp -> lchild = grandparent;
         temp -> parent = NULL;
         grandparent -> rchild = NULL;
-    /*after rotation swap the color of parent and grandparent*/
+
+    /**after rotation swap the color of parent and grandparent*/
 
         grandparent -> color = temp -> color;
         temp -> color = color_swap;
         root = temp;
     }
-    else{ /*if grandparent is not root */
+    else {                                      /*if grandparent is not root*/
         
         temp -> parent = grandparent -> parent;
         temp -> lchild = grandparent;
@@ -218,21 +243,29 @@ RBT_NODE *rotate_left (RBT_NODE *grandparent, RBT_NODE *root)
         grandparent -> parent = temp;
         grandparent -> rchild = NULL;
 
-        /* swap the colors of parent and grandparent */
+        /** swap the colors of parent and grandparent */
+
         grandparent -> color = temp -> color;
         temp -> color = color_swap;
     }
     return root;
 }
-/*function definition for left-right case*/
+
+/**@brief : function definition for left-right case condition
+ * @param : Parent node of the tree and root node of the tree
+ * @return : returning the root node of the tree
+ */
+
 RBT_NODE *rotate_left_right (RBT_NODE *parent_new, RBT_NODE *root)
 {
-    RBT_NODE *temp = NULL;//temporary pointer
+    RBT_NODE *temp = NULL;                      /*temporary pointer*/
     temp = (RBT_NODE *) malloc (sizeof (RBT_NODE));
     assert (temp);
 
     temp = parent_new -> rchild;
-    /*rotate right to get left-left case*/
+
+    /**rotate right to get left-left case*/
+
     temp -> parent = parent_new -> parent;
     parent_new -> parent -> lchild = temp;
     parent_new -> parent = temp;
@@ -240,15 +273,22 @@ RBT_NODE *rotate_left_right (RBT_NODE *parent_new, RBT_NODE *root)
     
     return root;
 }
-/*function definition for right-left case*/
+
+/**@brief : function definition for right-left case condition
+ * @param : Parent node of the tree and root node of the tree
+ * @return : returning the root node of the tree
+ */
+
 RBT_NODE *rotate_right_left (RBT_NODE *parent_new, RBT_NODE *root)
 {
-    RBT_NODE *temp = NULL;//temporary pointer
+    RBT_NODE *temp = NULL;                      /*temporary pointer*/
 
     temp = (RBT_NODE *) malloc (sizeof (RBT_NODE));
     assert (temp);
     temp = parent_new -> lchild;
-    /*rotate right to get right-right case*/
+
+    /**rotate right to get right-right case*/
+
     temp -> parent = parent_new -> parent;
     parent_new -> parent -> rchild = temp;
     parent_new -> parent = temp;
