@@ -1,7 +1,7 @@
 
 /**
  * File:rbtreefunc.c
- * Description:Rbtree insertion with all conditions
+ * Description:Rbtree insertion with all conditions.
  * Date:15-7-18
  * Last modified:23-8-18
  * Last modified by:Shrishail Satihal<s.shrishail@globaledgesoft.com>

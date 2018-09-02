@@ -2,7 +2,7 @@
 /*
  * File:create.c
  * Author:shrishail satihal
- * Description:creating a node to insert into hash table
+ * Description:creating a node to insert into hash table.
  * Date:20-7-18
  * last modified:23-8-18
  * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>

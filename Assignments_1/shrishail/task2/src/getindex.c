@@ -1,7 +1,7 @@
 /*
  * File:getindex.c
  * Author:shrishail satihal
- * Description:function for getting index of each string
+ * Description:function for getting index of each string.
  * Date:20-7-18
  * last modified:23-8-18
  * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>

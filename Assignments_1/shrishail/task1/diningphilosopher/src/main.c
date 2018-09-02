@@ -2,7 +2,7 @@
 /*
  * File:main.c
  * author:shrishail satihal
- * Description:dining philosopher problem
+ * Description:main function for dining philosopher problem
  * date:13-7-18
  * Last modified:23-8-18
  * Last modified by:Shrishail Satihal <s.shrishail@globaledgesoft.com>

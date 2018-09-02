@@ -1,7 +1,7 @@
 
 /*
  * File:insert.c
- * Description:inserting a node for RB tree
+ * Description:inserting a node for RB tree.
  * Author:Shrishail Satihal
  * Date:13-7-18
  * Last modified:23-8-18

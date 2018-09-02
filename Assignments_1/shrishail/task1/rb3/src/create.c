@@ -1,7 +1,7 @@
 
 /*
  * File:create.c
- * Description:creating a node for RB tree
+ * Description:creating a node for RB tree.
  * Author:Shrishail Satihal
  * Date:12-7-18
  * Last modified:23-8-18
@@ -9,10 +9,10 @@
  */
 
 rbtree *create_node(rbtree *root,
-	int val) /*Function definition for creating a nod which takes an
+	int val) /* Function definition for creating a nod which takes an
 		   arguments root which is pointer to a structure of rbtree
 		   and value is of type integer and it returns pointer
-		   to structure rbtree*/
+		   to structure rbtree */
 {
     rbtree *newnode = NULL;
 

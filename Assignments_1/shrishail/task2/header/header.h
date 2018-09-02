@@ -2,7 +2,7 @@
 /*
  * File:header.h
  * author:Shrishail Satihal
- * Description:Hash table implementation
+ * Description:header file for Hash table implementation
  * Date:20-7-18
  * last modified:23-8-18
  * Last modified by:Shrishail Satihal <s.shrishail@globaledgesoft.com>

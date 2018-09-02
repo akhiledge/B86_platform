@@ -2,7 +2,7 @@
 /*
  * File:insert.c
  * Author:shrishail satihal
- * Description:inserting the words in to hashtable
+ * Description:inserting the words in to hashtable.
  * Date:20-7-18
  * last modified:23-8-18
  * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>

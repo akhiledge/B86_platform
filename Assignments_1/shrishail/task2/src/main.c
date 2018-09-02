@@ -2,7 +2,7 @@
 /*
  * File:main.c
  * Author:shrishail satihal
- * Description:Hash table implementation for counting words occurrence
+ * Description:Hash table implementation for counting words occurrence.
  * Date:20-7-18
  * last modified:23-8-18
  * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>

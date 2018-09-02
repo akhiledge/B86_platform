@@ -2,7 +2,7 @@
 /*
  * File:print.c
  * Author:shrishail satihal
- * Description:copying the contents into another file
+ * Description:copying the contents into another file.
  * Date:20-7-18
  * last modified:23-8-18
  * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>

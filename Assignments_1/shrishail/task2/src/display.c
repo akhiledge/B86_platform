@@ -2,7 +2,7 @@
 /*
  * File:display.c
  * Author:shrishail satihal
- * Description:displaying the contents of hash table
+ * Description:displaying the contents of hash table.
  * Date:20-7-18
  * last modified:23-8-18
  * last modified by:shrishail satihal <s.shrishail@globaledgesoft.com>

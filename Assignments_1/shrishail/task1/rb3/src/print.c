@@ -1,7 +1,7 @@
 
 /**
  * File:print.c
- * Description:Printing the nodes
+ * Description:Printing the nodes of rbtree.
  * Date:12-7-18
  * Last modified:23-8-18
  * Last modified by:Shrishail Satihal<s.shrishail@globaledgesoft.com>
