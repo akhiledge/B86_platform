@@ -1,35 +1,48 @@
-///@brief Program to insert and display node in RB tree
-int main()
+/**
+ * File              : main.c
+ * Author            : Poojashree M <m.poojashreeglobaledgesoft.com>
+ * Date              : 13.07.2018
+ * Brief			 : RB tree insertion of nodes
+ * Last Modified Date: 02.09.2018
+ * Last Modified By  : Poojashree M <m.poojashreeglobaledgesoft.com>
+ */
+
+/**@brief: main function to take input from user and invoke function
+  @param: No arguments
+ *@return: Returns 0 on success
+ */
+int main(void)
 {
-	///Variable declaration
 	int choice = 0;
-	int data = 0;					
+	int data = 0;
 	char *str = NULL;
-	RB_TREE *root = NULL;			/*!<root of the tree>*/
+	RB_TREE *root = NULL; /*!<@var: root of the tree>*/
 
 	str = (char *) malloc(MAX);
-	assert(str);
+	assert(str); /**Malloc validation*/
 
-	while(1){
+	while (1) {
 		printf("Enter choice\n");
 		printf("1. Insert node\n2. Display\n3. Exit\n");
 		fgets(str, MAX, stdin);
-		assert(str);
-		choice = atoi(str);									///choice of function
+		assert(str); /**malloc validation*/
+		choice = atoi(str); /**choice of function*/
 
-		switch(choice){
-			case 1: printf("Enter a number\n");					/*To get data and call insert function*/
-					fgets(str, MAX, stdin);
-					data = atoi(str);
-					root = insert_node(root, data);	
+		switch (choice) {
+		case 1: printf("Enter a number\n"); /**To get data from user*/
+				fgets(str, MAX, stdin);
+				data = atoi(str);
+				root = insert_node(root, data); /**insert_node function
+												call*/
+				break;
+
+		case 2: display(root); /**display function call*/
 					break;
 
-			case 2: display(root);								///display function call
-					break;
+		case 3: printf("Exiting\n");
+				exit(0); /**Exit from the program*/
 
-			case 3: exit(0);
-
-			default: printf("Invalid option\n");
+		default: printf("Invalid option\n");
 		}
 	}
 }

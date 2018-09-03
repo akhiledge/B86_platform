@@ -25,12 +25,13 @@ void *philosopher_fn(void *phil_index)
 {
 	int *phil_addr = NULL;
 	phil_addr = (int *) phil_index;
-	
-		printf("Philosopher %d is THINKING\n", *phil_addr + 1);
+	printf("Philosopher %d is THINKING\n", *phil_addr + 1);
+	while (1) {
 		sleep(2);
 		take_fork(*phil_addr); /**function call to pick the fork*/
 		sleep(2);
 		place_fork(*phil_addr); /**function call to place the fork again*/
+	}
 }
 
 /**@brief: Function definition to pick the forks
@@ -39,12 +40,12 @@ void *philosopher_fn(void *phil_index)
  */
 void take_fork(int phil_num)
 {
-	pthread_mutex_lock(&mtx);
+	sem_wait(&sem_main);
 	state[phil_num] = HUNGRY; /**state of philosopher is hungry*/
 	printf("Philosopher %d is HUNGRY\n", phil_num + 1);
 	check_avail_fork(phil_num); /**has to check availability of left and
 								  right forks*/
-	pthread_mutex_unlock(&mtx);
+	sem_post(&sem_main);
 	sem_wait(&sem[phil_num]);
 }
 
@@ -61,11 +62,10 @@ void check_avail_fork(int phil_num)
 										 hungry,left and right forks are
 										 available*/
 		state[phil_num] = EATING;
-
 		printf("Forks taken %d and %d by philosopher %d\n",
 						right+1, phil_num+1, phil_num + 1);
 		printf("Philosopher %d is EATING\n", phil_num + 1);
-
+		sleep(1);
 		sem_post(&sem[phil_num]);
 	}
 }
@@ -76,7 +76,7 @@ void check_avail_fork(int phil_num)
 */
 void place_fork(int phil_num)
 {
-	pthread_mutex_lock(&mtx);
+	sem_wait(&sem_main);
 	right = (phil_num == 0) ? NUM-1 : phil_num - 1;
 	left = (phil_num == NUM-1) ? 0 : phil_num+1;
 
@@ -90,7 +90,7 @@ void place_fork(int phil_num)
 							  left philosopher*/
 	check_avail_fork(right);/**has to check availability of forks for
 							  right philosopher*/
-	pthread_mutex_unlock(&mtx);
+	sem_post(&sem_main);
 }
 
 /**@brief: Creates threads depending on number of philosophers
@@ -103,6 +103,7 @@ int main(void)
 	int status = 0;
 	int index = 0;
 
+	sem_init(&sem_main, 0, 1);
 	for (index = 0; index < NUM; index++) {
 		sem_init(&sem[index], 0, 0);
 	}
