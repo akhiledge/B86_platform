@@ -22,6 +22,7 @@ struct node{
 };
 typedef struct node NODE;		
 
+enum choice {INSERT = 1, COPY, SEARCH, EXIT};
 ///function declarations
 void insert(char *, char *, int);
 int hash_func(char);
@@ -30,7 +31,7 @@ void display(void);
 void copy_file(FILE *, int);
 int search(char *);
 void display_node(NODE *);
-char *modify(char *);
+void modify(char *);
 
 extern NODE *hashtable[ARR_SIZE]; 
 ///End of header guard
