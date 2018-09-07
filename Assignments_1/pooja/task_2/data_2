@@ -1,3 +1,7 @@
-In many situations, hash tables turn out to be on average more efficient than search trees or any other table lookup structure. For this reason, they are widely used in many kinds of computer software, particularly for associative arrays, database indexing, caches, and sets.
+In many situations, hash tables turn out to be on average more efficient than search trees or any other table lookup structure. 
+For this reason, they are widely used in many kinds of computer software, particularly for associative arrays, database indexing, 
+caches, and sets.
 A good hash function and implementation algorithm are essential for good hash table performance, but may be difficult to achieve.
-A basic requirement is that the function should provide a uniform distribution of hash values. A non-uniform distribution increases the number of collisions and the cost of resolving them. Uniformity is sometimes difficult to ensure by design, but may be evaluated empirically using statistical tests, e.g., a Pearson's chi-squared test for discrete uniform distributions. 
+A basic requirement is that the function should provide a uniform distribution of hash values. A non-uniform distribution increases
+the number of collisions and the cost of resolving them. Uniformity is sometimes difficult to ensure by design, but may be 
+evaluated empirically using statistical tests, e.g., a Pearson's chi-squared test for discrete uniform distributions. 
